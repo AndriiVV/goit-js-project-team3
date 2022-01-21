@@ -1,0 +1,110 @@
+body {
+  background-color: var(--primary-bg-color);
+}
+.home {
+  // position: absolute;
+  top: 300px;
+  width: 100%;
+  z-index: -1;
+  //   height: 100%;
+  padding-top: 60px;
+  background-color: var(--primary-bg-color);
+  background-image: url(../images/noise-body-1x-mob.png);
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    background-image: url(../images/noise-body-2x-mob.png);
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    // padding-left: 37px;
+    // padding-right: 37px;
+    background-image: url(../images/noise-body-1x-tab.png);
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url(../images/noise-body-2x-tab.png);
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    padding-top: 80px;
+    background-image: url(../images/noise-body-1x-desk.png);
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url(../images/noise-body-2x-desk.png);
+    }
+  }
+}
+
+.search {
+  width: 100%;
+  z-index: 2;
+  &__list {
+    z-index: 3;
+    display: grid;
+    gap: 2px;
+    grid-template-columns: repeat(2, 1fr);
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      gap: 13px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media screen and (min-width: 1280px) {
+      padding-left: 45px;
+      padding-right: 45px;
+      gap: 56px;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  &__item {
+    z-index: 100;
+    width: 138px;
+    height: 228px;
+    @media screen and (min-width: 768px) {
+      width: 194px;
+      height: 312px;
+    }
+    background-color: var(--accent-opasity30-color);
+  }
+}
+.line1 {
+  margin: 0 auto;
+  width: 1px;
+  height: 742px;
+  background-color: var(--decor-bg-color);
+}
+.line2 {
+  margin: 0 auto;
+  width: 1px;
+  height: 1310px;
+  background-color: var(--decor-bg-color);
+}
+
+.circle {
+  margin: 0 auto;
+  width: 216px;
+  height: 216px;
+  border: 1px solid var(--decor-bg-color);
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.circle2 {
+  margin: 40px auto;
+  width: 136px;
+  height: 136px;
+  // border: 2px solid #fff;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.circle4 {
+  width: 334px;
+  height: 334px;
+  border: 1px solid var(--decor-bg-color);
+  border-top-right-radius: 100%;
+}
+
+.geometry {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  @media screen and (max-width: 1279px) {
+    display: none;
+  }
+}

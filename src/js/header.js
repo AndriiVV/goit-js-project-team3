@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import countries from "../json/countries.json";
 const axios = require('axios');
 
@@ -72,4 +70,3 @@ function renderCard(info) {
 }
 
 fetch(`https://app.ticketmaster.com/discovery/v2/events/G5v0Zpsu6Edy5/images.json?apikey=841T1YMOPnVKBAAycVhND0Lj4GpnyoMw`).then(res => res.json()).then(data => console.log(data))
->>>>>>> Stashed changes
