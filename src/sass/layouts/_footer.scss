@@ -23,18 +23,18 @@
     font-size: 14px;
     line-height: 17px;
   }
-  @media screen and (min-width: 610px) {
+  @media screen and (min-width: 768px) {
     width: 100%;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 16px;
+    line-height: 20px;
   }
 }
 .footer__text_heard {
   color: red;
 }
 .footer__text a:hover {
-  font-size: 18px;
+  font-size: 17px;
   color: #c2b7b7;
 }
