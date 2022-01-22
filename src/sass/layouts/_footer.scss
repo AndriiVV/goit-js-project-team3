@@ -9,11 +9,13 @@
 .footer__text {
   display: flex;
   justify-content: center;
+
 }
 .footer__text a {
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
+
   color: #939393;
   text-decoration: none;
 
@@ -30,11 +32,14 @@
     font-size: 16px;
     line-height: 20px;
   }
+
 }
 .footer__text_heard {
   color: red;
 }
+
 .footer__text a:hover {
   font-size: 17px;
   color: #c2b7b7;
 }
+
