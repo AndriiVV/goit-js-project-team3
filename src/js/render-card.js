@@ -20,10 +20,10 @@ function renderCard(info) {
       <div class="search-card"><div class="search__img">
       <img src="${item.images[1].url}" alt="${item.name}">
       </div>
-        <span class="card-text-name">${item.name}</span> 
-        <span class="card-text-data">${item.dates.start.localDate}</span>
+        <span class="card-text__name">${item.name}</span> 
+        <span class="card-text__data">${item.dates.start.localDate}</span>
         
-          <span class="card-text-place"><svg class="place-icon" width="7" height="10">
+          <span class="card-text__place"><svg class="place-icon" width="7" height="10">
             <use href=""></use>
           </svg>${item._embedded.venues[0].name}</span></div>
         </li>`;
