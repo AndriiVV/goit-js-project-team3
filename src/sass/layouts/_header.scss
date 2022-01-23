@@ -27,7 +27,7 @@
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     background-image: url(../images/background-hero-2x-mob.jpg);
   }
-  z-index: -3;
+  z-index: -4;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     background-image: url(../images/background-hero-1x-tab.jpg);
@@ -49,7 +49,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-color: rgba(11, 11, 11, 0.5);
-  z-index: -2;
+  z-index: -3;
 }
 
 .header__overlay_bottom {
@@ -59,7 +59,7 @@
   left: 0;
   height: 102px;
   background: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(14, 14, 14, 0.8) 100%);
-  z-index: -1;
+  z-index: -2;
 
   @media screen and (min-width: 1280px) {
     background: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%);
@@ -246,6 +246,8 @@
 
 .search-input,
 .country-input {
+  // z-index: 1;
+  cursor: pointer;
   border-radius: 20px;
   border: none;
   background: rgba(255, 255, 255, 0.1);
@@ -255,19 +257,136 @@
   height: 40px;
   margin-bottom: 25px;
   padding-left: 30px;
-  padding-right: 30px;
+  padding-right: 50px;
   font-family: 'Montserrat';
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
 }
 
-.country-input {
+// .country-input {
+//   // appearance: none;
+
+//   @media screen and (min-width: 768px) {
+//     margin-left: 30px;
+//   }
+// }
+
+// ===== Стили для оформления секции form-field-country =====
+
+.app {
+  // padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+
   @media screen and (min-width: 768px) {
     margin-left: 30px;
   }
 }
 
-// .btn-search {
-//   visibility: hidden;
-// }
+.wrap {
+  width: 270px;
+  height: 40px;
+}
+
+.select {
+  width: 100%;
+  position: relative;
+  z-index: 100;
+
+  &.open {
+    .select__dropdown {
+      display: block;
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    .select__input {
+      border-bottom: none;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .select__backdrop {
+      display: block;
+    }
+  }
+
+  &__input {
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: #939393;
+    height: 40px;
+    margin-bottom: 25px;
+    padding-left: 30px;
+    padding-right: 50px;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // padding: 0 1rem;
+    cursor: pointer;
+  }
+
+  &__dropdown {
+    display: none;
+    position: absolute;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: #939393;
+
+    font-family: 'Montserrat';
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    text-align: left;
+    top: 40px;
+    left: 0;
+    right: 0;
+    max-height: 170px;
+    overflow-y: auto;
+    // box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__backdrop {
+    position: fixed;
+    display: none;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: transparent;
+  }
+
+  &__item {
+    padding-left: 30px;
+    height: 25px;
+    // border-bottom: 1px solid #ccc;
+
+    &.selected {
+      background-color: bisque;
+    }
+
+    &:hover {
+      background-color: #eee;
+      cursor: pointer;
+      transition: 0.15s background-color ease-in;
+    }
+  }
+}
+
+// ===== Стили для оформления секции form-field-country =====
