@@ -1,5 +1,6 @@
 body {
   background-color: var(--primary-bg-color);
+  z-index: -7;
 }
 .home {
   // position: absolute;
@@ -8,7 +9,7 @@ body {
   z-index: -1;
   //   height: 100%;
   // padding-top: 60px;
-  background-color: var(--primary-bg-color);
+  // background-color: var(--primary-bg-color);
   background-image: url(../images/noise-body-1x-mob.png);
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     background-image: url(../images/noise-body-2x-mob.png);
@@ -39,6 +40,7 @@ body {
     display: grid;
     gap: 2px;
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-columns: minmax(231px, max-content);
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       gap: 13px;
       grid-template-columns: repeat(3, 1fr);
@@ -48,6 +50,7 @@ body {
       padding-right: 45px;
       gap: 56px;
       grid-template-columns: repeat(4, 1fr);
+      grid-auto-columns: max-content;
     }
   }
 
@@ -56,7 +59,7 @@ body {
     z-index: 3;
     width: 138px;
     height: 231px;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
 
     @media screen and (min-width: 768px) {
       width: 194px;
@@ -67,17 +70,24 @@ body {
 
   &__card {
     position: absolute;
-    top: 13px;
-    right: 14px;
+    top: 9px;
+    right: 10px;
     // color: turquoise;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: auto;
+    @media screen and (min-width: 768px) {
+      top: 13px;
+      right: 14px;
+    }
   }
   &__img {
+    // object-fit: cover;
+    // object-position: 20% 30px;
     overflow: hidden;
-    width: 138px;
-    height: 231px;
+    width: 128px;
+    height: 161px;
     border-top-left-radius: 69px;
     border-bottom-right-radius: 69px;
     border: 1px solid var(--accent-opasity30-color);
@@ -86,7 +96,11 @@ body {
       height: 227px;
     }
     img {
+      display: block;
+      object-fit: cover;
+      // object-position: 20% 30px;
       width: 100%;
+      height: 100%;
       border: none;
     }
   }
@@ -116,6 +130,7 @@ body {
     font-family: Montserrat;
     font-size: 16px;
     line-height: 1.25;
+    text-align: center;
   }
   &__data {
     font-family: Montserrat;
@@ -131,6 +146,7 @@ body {
     color: var(--primary-text-color);
     font-weight: 600;
     font-size: 14px;
+    text-align: center;
   }
 }
 .geometry {
