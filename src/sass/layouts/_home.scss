@@ -3,28 +3,21 @@ body {
   z-index: -7;
 }
 .home {
-  // position: absolute;
   top: 300px;
   width: 100%;
   z-index: -1;
-  //   height: 100%;
-  // padding-top: 60px;
-  // background-color: var(--primary-bg-color);
   background-image: url(../images/noise-body-1x-mob.png);
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     background-image: url(../images/noise-body-2x-mob.png);
   }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    // padding-left: 37px;
-    // padding-right: 37px;
     background-image: url(../images/noise-body-1x-tab.png);
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
       background-image: url(../images/noise-body-2x-tab.png);
     }
   }
   @media screen and (min-width: 1280px) {
-    // padding-top: 80px;
     background-image: url(../images/noise-body-1x-desk.png);
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
       background-image: url(../images/noise-body-2x-desk.png);
@@ -40,7 +33,7 @@ body {
     display: grid;
     gap: 2px;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-columns: auto; //minmax(231px, max-content);
+    grid-auto-columns: auto;
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       gap: 13px;
       grid-template-columns: repeat(3, 1fr);
@@ -59,20 +52,16 @@ body {
     z-index: 3;
     width: 138px;
     height: 231px;
-    // border: 1px solid #ccc;
-
     @media screen and (min-width: 768px) {
       width: 194px;
       height: 312px;
     }
-    // background-color: var(--accent-opasity30-color);
   }
 
   &__card {
     position: absolute;
     top: 9px;
     right: 10px;
-    // color: turquoise;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,15 +72,12 @@ body {
     }
   }
   &__img {
-    // object-fit: cover;
-    // object-position: 20% 30px;
     overflow: hidden;
     width: 128px;
     height: 161px;
     border-top-left-radius: 69px;
     border-bottom-right-radius: 69px;
     margin-bottom: 5px;
-    // border: 1px solid var(--accent-opasity30-color);
     @media screen and (min-width: 768px) {
       width: 180px;
       height: 227px;
@@ -99,7 +85,6 @@ body {
     img {
       display: block;
       object-fit: cover;
-      // object-position: 20% 30px;
       width: 100%;
       height: 100%;
       border: none;
@@ -111,7 +96,6 @@ body {
     right: 0;
     background-color: transparent;
     border: 1px solid var(--accent-opasity30-color);
-
     width: 109px;
     height: 101px;
     border-top-left-radius: 53px;
@@ -132,14 +116,13 @@ body {
     font-size: 16px;
     line-height: 1.25;
     text-align: center;
-    display: inline-block; /* important */
+    display: inline-block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-transition: 3.3s;
     -moz-transition: 3.3s;
     transition: 3.3s;
-
     -webkit-transition-timing-function: linear;
     -moz-transition-timing-function: linear;
     transition-timing-function: linear;
@@ -148,8 +131,8 @@ body {
     }
   }
   &__transform {
-    // position: absolute;
-    width: 160px;
+    text-align: center;
+    width: 170px;
     overflow: hidden;
     -webkit-transition: 3.3s;
     -moz-transition: 3.3s;
@@ -159,8 +142,8 @@ body {
     transition-timing-function: linear;
   }
   &__transform2 {
-    // position: absolute;
-    width: 120px;
+    text-align: center;
+    width: 170px;
     overflow: hidden;
     -webkit-transition: 3.3s;
     -moz-transition: 3.3s;
@@ -184,7 +167,7 @@ body {
     font-weight: 600;
     font-size: 14px;
     text-align: center;
-    display: inline-block; /* important */
+    display: inline-block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -197,11 +180,21 @@ body {
     &:hover {
       margin-left: -100px;
     }
+    // &::before {
+    //   width: 7px;
+    //   height: 10px;
+    //   background-color: #fff;
+    //   background-image: url('https://img.icons8.com/ios-filled/50/000000/marker.png');
+    // }
   }
 }
 .place-icon {
   width: 7px;
   height: 10px;
+  use {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .geometry {
@@ -248,12 +241,10 @@ body {
   }
 
   &__right {
-    // position: absolute;
     top: 0;
     right: 5%;
   }
   &__left {
-    // position: absolute;
     top: 0;
     left: 5%;
   }
@@ -275,7 +266,6 @@ body {
     margin: 40px auto;
     width: 136px;
     height: 136px;
-    // border: 2px solid #fff;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.02);
     @media screen and (min-width: 768px) and (max-width: 1279px) {
