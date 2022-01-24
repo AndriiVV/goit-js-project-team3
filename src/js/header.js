@@ -38,8 +38,9 @@ function onSubmitForm(event) {
   }
   Notiflix.Notify.success('Awesome! GO-GO-GO')
   fetchUrl(searchId, code);
+  
   event.target.reset();
 }
 
 
-// export default onSubmitForm;
+export default onSubmitForm;
