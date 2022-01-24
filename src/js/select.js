@@ -16,7 +16,7 @@ const getTemplate = (data = [], placeholder, selectedId) => {
     <div class="select__backdrop" data-type="backdrop"></div>
     <div class="select__input" data-type="input">
       <span data-type="value" name="searchCountryQuery" value="${selectedId}">${text}</span>
-      <i class="fa fa-chevron-down" data-type="arrow"></i>
+      <i class="fas fa-chevron-down" data-type="arrow"></i>
     </div>
     <div class="select__dropdown">
       <ul class="select__list">
@@ -72,6 +72,7 @@ export class Select {
 
   select(id) {
     this.selectedId = id;
+    this.$value.setAttribute('value', id);
     this.$value.textContent = this.current.value;
 
     this.$el.querySelectorAll('[data-type="item"]').forEach(el => {
