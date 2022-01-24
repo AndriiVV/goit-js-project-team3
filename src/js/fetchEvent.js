@@ -1,9 +1,11 @@
+import renderModal from "./render-modal"
 const axios = require('axios');
 
 function fetchEvent(id) {
  
   return axios.get(`https://app.ticketmaster.com/discovery/v2/events/${id}.json?apikey=841T1YMOPnVKBAAycVhND0Lj4GpnyoMw`)
     .then(res => {
+      renderModal(res.data)
       // console.log(res.data);
       // console.log(res.data.info)
       // console.log(res.data.dates.start.localDate)
