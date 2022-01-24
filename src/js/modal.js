@@ -1,32 +1,34 @@
+import  fetchEvent from "./fetchEvent"
+
 const refs = {
   openModalBtn: document.querySelector('[data-modal-open]'),
   closeModalBtn: document.querySelector('[data-modal-close]'),
   modal: document.querySelector('[data-modal]'),
 };
 
-refs.openModalBtn.addEventListener('click', onOpenModal);
-refs.closeModalBtn.addEventListener('click', onCloseModal);
-refs.modal.addEventListener('click', backDropClick);
+// refs.openModalBtn.addEventListener('click', onOpenModal);
+// refs.closeModalBtn.addEventListener('click', onCloseModal);
+// refs.modal.addEventListener('click', backDropClick);
 
-function onOpenModal() {
-  window.addEventListener('keydown', onEscPress);
-  refs.modal.classList.remove('visually-hidden');
-}
-function onCloseModal() {
-  window.removeEventListener('keydown', onEscPress);
-  refs.modal.classList.add('visually-hidden');
-}
-function backDropClick(e) {
-  if (e.currentTarget === e.target) {
-    onCloseModal();
-  }
-}
+// function onOpenModal() {
+//   window.addEventListener('keydown', onEscPress);
+//   refs.modal.classList.remove('visually-hidden');
+// }
+// function onCloseModal() {
+//   window.removeEventListener('keydown', onEscPress);
+//   refs.modal.classList.add('visually-hidden');
+// }
+// function backDropClick(e) {
+//   if (e.currentTarget === e.target) {
+//     onCloseModal();
+//   }
+// }
 
-function onEscPress(e) {
-  if (e.code === 'Escape') {
-    onCloseModal();
-  }
-}
+// function onEscPress(e) {
+//   if (e.code === 'Escape') {
+//     onCloseModal();
+//   }
+// }
 
 // ============================== toggle
 // const refs = {
