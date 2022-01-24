@@ -4,22 +4,20 @@ const axios = require('axios');
 import fetchUrl from './fetchImages';
 import { Select } from '../js/select';
 
+const alpha = countries.map(country => {
+  const container = {};
+  container.id = country.alpha;
+  container.value = country.name;
+  return container;
+});
+
 const select = new Select('#select', {
   placeholder: 'Choose country',
-  selectedId: 'US',
-  data: [
-    { id: 'US', value: 'United States' },
-    { id: 'UA', value: 'Ukraine' },
-    { id: 'CA', value: 'Canada' },
-    { id: 'CZ', value: 'Czech Republic' },
-    { id: 'CR', value: 'Croatia' },
-    { id: 'DM', value: 'Denmark' },
-    { id: 'PL', value: 'Poland' },
-    { id: 'PO', value: 'Portugal' },
-  ],
-  onSelect(item) {
-    console.log('Selected Item', item.id);
-  },
+  selectedId: 'UA',
+  data: alpha,
+  // onSelect(item) {
+  //   console.log('Selected Item', item.id);
+  // },
 });
 
 window.s = select;
