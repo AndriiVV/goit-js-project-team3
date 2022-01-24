@@ -72,6 +72,9 @@ body {
     }
   }
   &__img {
+    // object-fit: cover;
+    // object-position: 20% 30px;
+    // cursor: pointer;
     overflow: hidden;
     width: 128px;
     height: 161px;

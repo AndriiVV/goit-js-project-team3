@@ -16,7 +16,7 @@ const getTemplate = (data = [], placeholder, selectedId) => {
     <div class="select__backdrop" data-type="backdrop"></div>
     <div class="select__input" data-type="input">
       <span data-type="value" name="searchCountryQuery" value="${selectedId}">${text}</span>
-      <i class="fas fa-chevron-down" data-type="arrow"></i>
+      <i class="fas fa-caret-down" data-type="arrow"></i>
     </div>
     <div class="select__dropdown">
       <ul class="select__list">
@@ -91,14 +91,14 @@ export class Select {
 
   open() {
     this.$el.classList.add('open');
-    this.$arrow.classList.remove('fa-chevron-down');
-    this.$arrow.classList.add('fa-chevron-up');
+    this.$arrow.classList.remove('fa-caret-down');
+    this.$arrow.classList.add('fa-caret-up');
   }
 
   close() {
     this.$el.classList.remove('open');
-    this.$arrow.classList.add('fa-chevron-down');
-    this.$arrow.classList.remove('fa-chevron-up');
+    this.$arrow.classList.add('fa-caret-down');
+    this.$arrow.classList.remove('fa-caret-up');
   }
 
   destroy() {

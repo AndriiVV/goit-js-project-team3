@@ -1,22 +1,45 @@
 import fetchUrl from "./fetchImages"
 
-const PageContainer= document.querySelector(".main__pagination")
-let res = 0;
+const pageContainer = document.querySelector(".main__pagination")
 
-function renderPage(totalPage) {
-  console.log(totalPage);
+function renderPage(totalPage,url) {
 
-  for (let i = 1; i <= totalPage; i++){
-    
-    PageContainer.innerHTML += `
-    <li class="main__pagination_item js__pagination_active">
-    <span>${i}</span>
-    </li>
-    `
-    // res += 1
-    
-    console.log(i);
+  pageContainer.innerHTML=""
+  if (totalPage <= 7) {
+    for (let i = 1; i <= totalPage; i++){
+      
+    pageContainer.innerHTML += `
+    <li class="main__pagination_item ">
+    <a  data-href="${url}">${i}</a>
+    </li>`
   }
+    
+  } else {
+    pageContainer.innerHTML = `
+    <li class="main__pagination_item ">
+    <a class="js__pagination_active" data-href="${url}">1</a>
+    </li>
+    <li class="main__pagination_item ">
+    <a data-href="${url}">2</a>
+    </li>
+    <li class="main__pagination_item ">
+    <a data-href="${url}">3</a>
+    </li>
+    <li class="main__pagination_item ">
+    <a data-href="${url}">4</a>
+    </li>
+    <li class="main__pagination_item ">
+    <a data-href="${url}">5</a>
+    </li>
+    <li class="main__pagination_item ">
+    <span> ... </span>
+    </li>
+    <li class="main__pagination_item ">
+    <a data-href="${url}">${totalPage}</a>
+    </li>`
+    
+  }
+  
 }
 
 export default renderPage;
