@@ -1,13 +1,43 @@
+// const refs = {
+//   openModalBtn: document.querySelector('[data-about-open]'),
+//   closeModalBtn: document.querySelector('[data-about-close]'),
+//   modal: document.querySelector('[data-about]'),
+// };
+
+// refs.closeModalBtn.addEventListener('click', toggleModal);
+
+// refs.openModalBtn.addEventListener('click', toggleModal);
+
+// function toggleModal() {
+//   refs.modal.classList.toggle('visually-hidden');
+// }
+
 const refs = {
   openModalBtn: document.querySelector('[data-about-open]'),
   closeModalBtn: document.querySelector('[data-about-close]'),
   modal: document.querySelector('[data-about]'),
 };
 
-refs.closeModalBtn.addEventListener('click', toggleModal);
+refs.openModalBtn.addEventListener('click', onOpenModal);
+refs.closeModalBtn.addEventListener('click', onCloseModal);
+refs.modal.addEventListener('click', backDropClick);
 
-refs.openModalBtn.addEventListener('click', toggleModal);
+function onOpenModal() {
+  window.addEventListener('keydown', onEscPress);
+  refs.modal.classList.remove('visually-hidden');
+}
+function onCloseModal() {
+  window.removeEventListener('keydown', onEscPress);
+  refs.modal.classList.add('visually-hidden');
+}
+function backDropClick(e) {
+  if (e.currentTarget === e.target) {
+    onCloseModal();
+  }
+}
 
-function toggleModal() {
-  refs.modal.classList.toggle('visually-hidden');
+function onEscPress(e) {
+  if (e.code === 'Escape') {
+    onCloseModal();
+  }
 }
