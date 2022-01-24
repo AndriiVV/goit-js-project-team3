@@ -1,4 +1,5 @@
 import fetchUrl from './fetchImages';
+// import vectorSvg from '../images/bg-logo-1x-mob.png';
 
 const cardEL = document.querySelector('.search__list');
 
@@ -39,3 +40,7 @@ function renderCard(info) {
 }
 
 export default renderCard;
+
+// <svg width="7" height="10" viewBox="0 0 7 10" class="place-icon">
+//   <use href="${vectorSvg}"></use>
+// </svg>;
