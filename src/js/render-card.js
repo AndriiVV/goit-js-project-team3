@@ -18,7 +18,7 @@ function renderCard(info) {
     <li class="search__item">
     <div class="search__rectangle"></div>
       <div class="search__card">
-      <div class="search__img">
+      <div class="search__img" >
       <img src="${item.images[1].url}" alt="${item.name}">
       </div>
         <span class="card-text__name">${item.name}</span> 
