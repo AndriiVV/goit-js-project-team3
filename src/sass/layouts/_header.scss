@@ -289,10 +289,15 @@
     width: 3px;
   }
 
+  ::-webkit-scrollbar-button {
+    height: 15px;
+  }
+
   ::-webkit-scrollbar-thumb {
     background-color: #939393;
     border-radius: 20px;
     border: none;
+    height: 43px;
   }
 
   // padding-top: 5rem;
@@ -343,6 +348,7 @@
   }
 
   &__input {
+    // display: block;
     border: none;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.1);
@@ -352,6 +358,8 @@
     margin-bottom: 25px;
     padding-left: 30px;
     padding-right: 30px;
+    // white-space: nowrap;
+    // overflow-x: hidden;
     font-family: 'Montserrat';
     font-size: 16px;
     line-height: 20px;
@@ -361,6 +369,13 @@
     justify-content: space-between;
     // padding: 0 1rem;
     cursor: pointer;
+
+    & span {
+      max-width: 190px;
+      white-space: nowrap;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   &__dropdown {
@@ -372,7 +387,6 @@
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     color: #939393;
-
     font-family: 'Montserrat';
     font-size: 16px;
     line-height: 20px;
@@ -404,19 +418,24 @@
   }
 
   &__item {
+    display: block;
+    width: 265px;
     padding-left: 30px;
+    padding-right: 20px;
     height: 25px;
     line-height: 25px;
-
-    // border-bottom: 1px solid #ccc;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #cccccc;
 
     &.selected {
-      // background-color: #dc56c5;
       font-weight: 700;
     }
 
     &:hover {
       background-color: #dc56c5;
+      color: white;
       cursor: pointer;
       transition: 0.15s background-color ease-in;
     }
