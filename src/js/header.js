@@ -13,7 +13,7 @@ const alpha = countries.map(country => {
 
 const select = new Select('#select', {
   placeholder: 'Choose country',
-  selectedId: 'GB',
+  selectedId: 'US',
   data: alpha,
   // onSelect(item) {
   //   console.log('Selected Item', item.id);

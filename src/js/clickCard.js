@@ -9,7 +9,7 @@ function onClickCard(event) {
   if (event.target.tagName === "UL") {
     return false
   } else {
-    modal.classList.remove("visually-hidden")
+    // modal.classList.remove("visually-hidden")
  
     fetchEvent(event.target.id)
   }
