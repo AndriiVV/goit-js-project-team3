@@ -27,7 +27,7 @@ window.s = select;
 
 const refs = {
   form: document.querySelector('#search-form'),
-  inputSearch: document.querySelector('[name=searchQuery]'),
+  inputSearch: document.querySelector('[name=q]'),
   inputCountry: document.querySelector('[name=searchCountryQuery]'),
   cardEL: document.querySelector('.search__list'),
 };
@@ -52,7 +52,7 @@ refs.form.addEventListener('submit', onSubmitForm);
 
 function onSubmitForm(event) {
   event.preventDefault();
-  searchId = event.target.searchQuery.value;
+  searchId = event.target.q.value;
 
   code = refs.inputCountry.getAttribute('value');
 

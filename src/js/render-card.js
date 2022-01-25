@@ -1,4 +1,5 @@
 import fetchUrl from './fetchImages';
+import renderCardForTablet from "./firstFetch"
 // import vectorSvg from '../images/bg-logo-1x-mob.png';
 
 const cardEL = document.querySelector('.search__list');
@@ -22,13 +23,13 @@ function renderCard(info) {
         <div id="${item.id}" class="search__img" >
           <img id="${item.id}" src="${item.images[1].url}" alt="${item.name}">
         </div>
-        <div id="${item.id}" class="card-text__transform">
-          <span id="${item.id}" class="card-text__name">${item.name}</span>
+        <div id="${item.id}" class="card-text__transform ">
+          <span id="${item.id}" class="card-text__name animation__scss">${item.name}</span>
         </div>
         <span id="${item.id}" class="card-text__data">${item.dates.start.localDate}</span>        
-        <div id="${item.id}"class="card-text__transform2">
-          <span id="${item.id}" class="card-text__place">
-            <svg id="${item.id}" class="place-icon">
+        <div id="${item.id}"class="card-text__transform2 ">
+          <span id="${item.id}" class="card-text__place animation__scss">
+            <svg id="${item.id}" class="place-icon ">
               <use href="./images/symbol-defs.svg#icon-vector"></use>
             </svg>&#10207; ${item._embedded.venues[0].name}
           </span>
@@ -40,6 +41,25 @@ function renderCard(info) {
       .join('');
 
     cardEL.innerHTML = cardMarkup;
+    const spanText = document.querySelectorAll(".card-text__name")
+    const spanAll = [...spanText]
+    const placeText = document.querySelectorAll(".card-text__place")
+    const placeAll = [...placeText]
+// console.log(placeAll);
+
+    const spanMap = spanAll.map(item => { 
+      if (item.textContent.length < 20) {
+       return item.classList.remove("animation__scss")
+      }
+    })
+
+    const placeMap = placeAll.map(item => { 
+      console.log(item.textContent.length);
+      if (item.textContent.length < 75) {
+       return item.classList.remove("animation__scss")
+      }
+    })
+    
   }
 }
 

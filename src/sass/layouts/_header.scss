@@ -217,6 +217,7 @@
   }
 
   & .form-field-search {
+    position: absolute;
     position: relative;
     display: block;
     margin-bottom: 25px;
@@ -238,8 +239,8 @@
 
   & .search-icon {
     position: absolute;
-    right: 30px;
-    top: 14px;
+    left: 18px;
+    top: 15px;
     width: 12px;
     height: 12px;
     fill: #939393;
@@ -272,6 +273,9 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
+}
+.search-input {
+  padding-left: 40px;
 }
 
 // .country-input {
@@ -443,3 +447,75 @@
 }
 
 // ===== Стили для оформления секции form-field-country =====
+
+.container {
+  padding: 30px 50px;
+}
+// .search-form-voice {
+//   width: 30%;
+//   margin: 0 auto;
+//   position: relative;
+// }
+// .search-form-voice input {
+//   width: 100%;
+//   font-size: 1.5rem;
+//   padding: 10px 15px;
+//   border: 2px solid #ccc;
+//   border-radius: 2px;
+// }
+.search-form {
+  position: relative;
+}
+.search-form button {
+  position: absolute;
+  right: 11px;
+  top: 8px;
+
+  width: 12px;
+  height: 12px;
+  z-index: 5;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  width: 3rem;
+  text-align: center;
+
+  cursor: pointer;
+  color: #939393;
+  font-size: 20px;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  &:hover {
+    color: #dc56c5;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+}
+// .info {
+//   margin-top: 0.5rem;
+//   text-align: center;
+//   font-size: 0.75rem;
+// }
+
+// @media (max-width: 1200px) {
+//   .search-form-voice {
+//     width: 50%;
+//   }
+// }
+// @media (max-width: 768px) {
+//   .container {
+//     padding: 30px 35px;
+//   }
+//   .search-form-voice {
+//     width: 100%;
+//   }
+//   .info {
+//     font-size: 0.5rem;
+//   }
+// }

@@ -18,6 +18,7 @@ async function fetchUrl(keyword, code) {
     const data = await response.json();
     renderCard(data._embedded.events);
     renderPage(data.page.totalPages, data._links.self.href,)
+    console.log(data);
     if (data.page.totalElements !== 0) {
       setTimeout(() => { Notiflix.Notify.success('Awesome! GO-GO-GO');},500)
       
