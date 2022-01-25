@@ -7,22 +7,22 @@ const refs = {
 };
 
 // refs.openModalBtn.addEventListener('click', onOpenModal);
-refs.closeModalBtn.addEventListener('click', onCloseModal);
-refs.modal.addEventListener('click', backDropClick);
+// refs.closeModalBtn.addEventListener('click', onCloseModal);
+// refs.modal.addEventListener('click', backDropClick);
 
 // function onOpenModal() {
 //   window.addEventListener('keydown', onEscPress);
 
 // }
-function onCloseModal() {
-  // window.removeEventListener('keydown', onEscPress);
-  refs.modal.classList.add('visually-hidden');
-}
-function backDropClick(e) {
-  if (e.currentTarget === e.target) {
-    onCloseModal();
-  }
-}
+// function onCloseModal() {
+//   // window.removeEventListener('keydown', onEscPress);
+//   refs.modal.classList.add('visually-hidden');
+// }
+// function backDropClick(e) {
+//   if (e.currentTarget === e.target) {
+//     onCloseModal();
+//   }
+// }
 
 // function onEscPress(e) {
 //   if (e.code === 'Escape') {
