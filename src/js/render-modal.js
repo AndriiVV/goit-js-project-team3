@@ -50,6 +50,8 @@ function renderModal(item) {
        
       </div>
        <a href="${item.url}" target="_blank" class="event-card__btn-buy">BUY TICKETS</a>
+       </div>
+       </div>
       <button class="event-card__btn-more">MORE FROM THIS AUTHOR</button>
       </div>
       

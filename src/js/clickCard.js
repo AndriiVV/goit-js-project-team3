@@ -1,17 +1,16 @@
-import fetchEvent from "./fetchEvent"
+import fetchEvent from './fetchEvent';
 
-const formCard = document.querySelector(".search__list")
-const modal = document.querySelector(".backdrop")
+const formCard = document.querySelector('.search__list');
+const modal = document.querySelector('.backdrop');
 console.log(modal);
-formCard.addEventListener("click", onClickCard)
+formCard.addEventListener('click', onClickCard);
 function onClickCard(event) {
-  event.preventDefault()
-  if (event.target.tagName === "UL") {
-    return false
+  event.preventDefault();
+  if (event.target.tagName === 'UL') {
+    return false;
   } else {
-    // modal.classList.remove("visually-hidden")
- 
-    fetchEvent(event.target.id)
+    modal.classList.remove('visually-hidden');
+
+    fetchEvent(event.target.id);
   }
-  
 }
