@@ -1,19 +1,18 @@
-import fetchUrl from "./fetchImages"
+import fetchUrl from './fetchImages';
 
-const pageContainer = document.querySelector(".main__pagination")
+const pageContainer = document.querySelector('.main__pagination');
 
-function renderPage(totalPage,url) {
-
-  pageContainer.innerHTML=""
+function renderPage(totalPage, url) {
+  pageContainer.innerHTML = '';
   if (totalPage <= 7) {
-    for (let i = 1; i <= totalPage; i++){
-      
-    pageContainer.innerHTML += `
+    for (let i = 1; i <= totalPage; i++) {
+      const firstPageActive = i === 1 ? 'class="js__pagination_active"' : '';
+
+      pageContainer.innerHTML += `
     <li class="main__pagination_item ">
-    <a  data-href="${url}">${i}</a>
-    </li>`
-  }
-    
+    <a ${firstPageActive} data-href="${url}">${i}</a>
+    </li>`;
+    }
   } else {
     pageContainer.innerHTML = `
     <li class="main__pagination_item ">
@@ -36,10 +35,8 @@ function renderPage(totalPage,url) {
     </li>
     <li class="main__pagination_item ">
     <a data-href="${url}">${totalPage}</a>
-    </li>`
-    
+    </li>`;
   }
-  
 }
 
 export default renderPage;

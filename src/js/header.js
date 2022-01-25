@@ -13,7 +13,7 @@ const alpha = countries.map(country => {
 
 const select = new Select('#select', {
   placeholder: 'Choose country',
-  selectedId: 'US',
+  selectedId: 'GB',
   data: alpha,
   // onSelect(item) {
   //   console.log('Selected Item', item.id);
@@ -58,7 +58,7 @@ function onSubmitForm(event) {
   }
   Notiflix.Notify.success('Awesome! GO-GO-GO');
   fetchUrl(searchId, code);
-  
+
   event.target.reset();
 }
 
