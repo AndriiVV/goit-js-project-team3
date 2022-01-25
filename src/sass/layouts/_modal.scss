@@ -1,7 +1,10 @@
 .backdrop {
-  position: absolute;
+  position: fixed;
+  display: none;
   top: 0;
   right: 0;
+  left: 0;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,13 +19,16 @@
   z-index: 10;
 }
 .modal-event-card {
-  position: relative;
+  position: absolute;
+  top: 5%;
+
   margin: 0 auto;
   width: 272px;
   height: 915px;
   background-color: var(--modal-bg-color);
   border-top-left-radius: 136px;
   border-bottom-right-radius: 136px;
+  z-index: 11;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     width: 595px;
