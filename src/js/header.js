@@ -27,10 +27,17 @@ startPage(select.selectedId, select.options.countryName)
 window.s = select;
 
 const refs = {
-    form: document.querySelector('#search-form'),
-    inputSearch: document.querySelector('[name=searchQuery]'),
-    inputCountry: document.querySelector('[name=searchCountryQuery]'),
-    cardEL: document.querySelector('.search__list'),
+
+  form: document.querySelector('#search-form'),
+  inputSearch: document.querySelector('[name=q]'),
+  inputCountry: document.querySelector('[name=searchCountryQuery]'),
+  cardEL: document.querySelector('.search__list'),
+
+  //  form: document.querySelector('#search-form'),
+  //  inputSearch: document.querySelector('[name=searchQuery]'),
+  //    inputCountry: document.querySelector('[name=searchCountryQuery]'),
+  //    cardEL: document.querySelector('.search__list'),
+
 };
 
 let code = '';
@@ -52,8 +59,13 @@ renderSearchCountry(countries);
 refs.form.addEventListener('submit', onSubmitForm);
 
 function onSubmitForm(event) {
-    event.preventDefault();
-    searchId = event.target.searchQuery.value;
+
+  event.preventDefault();
+  searchId = event.target.q.value;
+
+
+  //  searchId = event.target.searchQuery.value;
+
 
     code = refs.inputCountry.getAttribute('value');
 
