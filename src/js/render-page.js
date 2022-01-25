@@ -30,8 +30,8 @@ function renderPage(totalPage, url) {
     <li class="main__pagination_item ">
     <a data-href="${url}">5</a>
     </li>
-    <li class="main__pagination_item ">
-    <span> ... </span>
+    <li class="main__pagination_item main__pagination_dats">
+    ... 
     </li>
     <li class="main__pagination_item ">
     <a data-href="${url}">${totalPage}</a>

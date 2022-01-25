@@ -132,7 +132,7 @@ async function fetchNumberClick(href, page, node) {
           <li class="main__pagination_item ">
           <a data-href="${href}">5</a>
           </li>
-          <li class="main__pagination_item " style="color:white">
+          <li class="main__pagination_item main__pagination_dats" >
           ...
           </li>
           <li class="main__pagination_item ">
@@ -142,7 +142,7 @@ async function fetchNumberClick(href, page, node) {
       pageUl.innerHTML = `<li class="main__pagination_item ">
           <a data-href="${href}">1</a>
           </li>
-          <li class="main__pagination_item " style="color:white">
+          <li class="main__pagination_item main__pagination_dats" >
           ...
           </li>
           <li class="main__pagination_item ">
@@ -164,7 +164,7 @@ async function fetchNumberClick(href, page, node) {
       pageUl.innerHTML = `<li class="main__pagination_item ">
           <a data-href="${href}">1</a>
           </li>
-          <li class="main__pagination_item " style="color:white">
+          <li class="main__pagination_item main__pagination_dats">
           ...
           </li>
           <li class="main__pagination_item ">
@@ -176,7 +176,7 @@ async function fetchNumberClick(href, page, node) {
           <li class="main__pagination_item ">
           <a data-href="${href}">${data.page.number + 2}</a>
           </li>
-          <li class="main__pagination_item " style="color:white">
+          <li class="main__pagination_item main__pagination_dats" >
           ...
           </li>
           <li class="main__pagination_item ">
