@@ -1,0 +1,68 @@
+.title {
+    animation: pulse;
+    animation-duration: 7s;
+}
+
+.logo {
+    animation: fadeInTopLeft;
+    animation-duration: 4s;
+}
+
+.logo-list {
+    animation: pulse;
+    animation-duration: 8s;
+     :hover {
+        animation: pulse;
+        animation-duration: 1s;
+    }
+}
+
+.form-field-search {
+    animation: pulse;
+    animation-duration: 6s;
+}
+
+.form-field-country {
+    animation: pulse;
+    animation-duration: 1s;
+}
+
+.search__list {
+    // display: inline-block;
+    animation: pulse;
+    animation-duration: 1.5s;
+}
+
+.search__card {
+    // display: inline-block;
+    animation: pulse;
+    animation-duration: 1s;
+     :hover {
+        animation: pulse;
+        animation-duration: 1s;
+    }
+}
+
+.search__rectangle {
+    animation: rotateIn;
+    animation-duration: 1.5s;
+}
+
+.main__pagination_item {
+     :hover {
+        animation: tada;
+        animation-duration: 2s;
+    }
+}
+
+.about-card__team li {
+     :hover {
+        animation: pulse;
+        animation-duration: 2s;
+    }
+}
+
+.header__overlay_bottom {
+    animation: fadeIn;
+    animation-duration: 2s;
+}
