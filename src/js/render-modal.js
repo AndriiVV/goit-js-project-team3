@@ -1,11 +1,10 @@
-
 const modalEl = document.querySelector('.event-card');
 
 function renderModal(item) {
   console.log(item.name);
 
-  const maxStandart = Math.floor(item.priceRanges[0].max / 2)
-  const minVip = Math.ceil(item.priceRanges[0].max / 2)
+  const maxStandart = Math.floor(item.priceRanges[0].max / 2);
+  const minVip = Math.ceil(item.priceRanges[0].max / 2);
 
   const modalInfo = `
     <div class="event-card__img-box">
@@ -25,16 +24,18 @@ function renderModal(item) {
       </div>
       <div class="event-card__event">
         <h3 class="event-card__info">INFO</h3>
-        <p class="event-card__text">
+        <div id="element">
+        <p class="event-card__text ">
           ${item.info}
         </p>
+        </div>
         <h3 class="event-card__where">WHEN</h3>
         <p class="event-card__text">${item.dates.start.localDate}</p>
         <p class="event-card__text">${item.dates.start.localTime} (${item.dates.timezone})</p>
         <h3 class="event-card__where">WHERE</h3>
         <p class="event-card__text">${item.dates.timezone}</p>
         <p class="event-card__text">${item._embedded.venues[0].name}</p>
-      </div>
+      
        <h3 class="event-card__info">WHO</h3>
       <p class="event-card__text"> ${item.name}</p>
         <h3 class="event-card__info">PRICES</h3>
@@ -42,16 +43,21 @@ function renderModal(item) {
           <p class="event-card__bar-code__text">||| || || |||</p>
           <p class="event-card__text">Standart ${item.priceRanges[0].min}-${maxStandart} ${item.priceRanges[0].currency}</p>
         </div>
-        <a href="${item.url}" class="event-card__btn-buy">BUY TICKETS</a>
+        <a href="${item.url}" target="_blank" class="event-card__btn-buy">BUY TICKETS</a>
           <div class="event-card__bar-code">
       <p class="event-card__bar-code__text">||| || || |||</p>
       <p class="event-card__text">VIP ${minVip}-${item.priceRanges[0].max} ${item.priceRanges[0].currency}</p>
+       
       </div>
+       <a href="${item.url}" target="_blank" class="event-card__btn-buy">BUY TICKETS</a>
+       </div>
+       </div>
+      <button class="event-card__btn-more">MORE FROM THIS AUTHOR</button>
       </div>
-    <button class="event-card__btn-more">MORE FROM THIS AUTHOR</button>`;
+      
+    `;
 
   modalEl.innerHTML = modalInfo;
 }
 
 export default renderModal;
-

@@ -1,5 +1,5 @@
 .backdrop {
-  // position: absolute;
+  position: absolute;
   top: 0;
   right: 0;
   display: flex;
@@ -182,7 +182,10 @@
       // }
     }
 
-    button {
+    a {
+      display: inline-block;
+      text-align: center;
+      padding-top: 10px;
       margin-bottom: 20px;
       width: 145px;
       height: 40px;
@@ -229,4 +232,23 @@
       margin-right: 5px;
     }
   }
+}
+// ========= SCROLL INFO ==========
+#element {
+  overflow-y: scroll;
+  margin-bottom: 10px;
+  width: 450px;
+  height: 66px;
+}
+#element::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--accent-opasity20-color);
+}
+#element::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--accent-primary-color);
+}
+
+#element::-webkit-scrollbar-track {
+  background-color: var(--modal-bg-color);
 }
