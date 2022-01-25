@@ -1,6 +1,6 @@
 import countries from '../json/countries.json';
-import Notiflix from 'notiflix';
-const axios = require('axios');
+import startPage from './firstFetch';
+
 import fetchUrl from './fetchImages';
 import { Select } from '../js/select';
 
@@ -8,17 +8,20 @@ const alpha = countries.map(country => {
   const container = {};
   container.id = country.alpha;
   container.value = country.name;
+  
   return container;
 });
 
 const select = new Select('#select', {
   placeholder: 'Choose country',
   selectedId: 'US',
+  countryName: 'United States of America',
   data: alpha,
   // onSelect(item) {
   //   console.log('Selected Item', item.id);
   // },
 });
+startPage(select.selectedId, select.options.countryName)
 
 window.s = select;
 
@@ -50,13 +53,9 @@ refs.form.addEventListener('submit', onSubmitForm);
 function onSubmitForm(event) {
   event.preventDefault();
   searchId = event.target.searchQuery.value;
-  // code = event.target.searchCountryQuery.getAttribute('value');
+
   code = refs.inputCountry.getAttribute('value');
-  if (searchId.length === 0 || code === 0) {
-    refs.cardEL.innerHTML = '';
-    return Notiflix.Notify.failure('Please write something ....');
-  }
-  Notiflix.Notify.success('Awesome! GO-GO-GO');
+
   fetchUrl(searchId, code);
 
   event.target.reset();
