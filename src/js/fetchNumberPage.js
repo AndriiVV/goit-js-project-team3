@@ -110,18 +110,26 @@ async function fetchNumberClick(href, page, node) {
     }
 
     if (maxPages <= 7) {
-      for (let i = 1; i <= totalPages; i++) {
-        let isPageActive = '';
-        if (i === +node.textContent) {
-          console.log('Page ', node.textContent, ' have to be active! ', i);
-          isPageActive = 'class="js__pagination_active"';
-        }
-
-        pageUl.innerHTML += `
+      let newPages = '';
+      // console.log('Max pages <= 7, update pagination');
+      for (let i = 1; i <= maxPages; i++) {
+        newPages += `
           <li class="main__pagination_item ">
-          <a ${isPageActive} data-href="${href}">${i}</a>
+          <a data-href="${href}">${i}</a>
           </li>`;
       }
+      // console.log('New markup is ', newPages);
+      // console.log('Key Node is: ', pageUl);
+      pageUl.innerHTML = newPages;
+
+      const newActive = document.querySelectorAll('.main__pagination a');
+      // console.log(newActive);
+      newActive.forEach(elem => {
+        if (elem.textContent == node.textContent) {
+          elem.classList.add('js__pagination_active');
+          // console.log('New active node is ', elem);
+        }
+      });
     } else if (data.page.number < 4) {
       pageUl.innerHTML = `<li class="main__pagination_item ">
           <a data-href="${href}">1</a>
@@ -214,7 +222,7 @@ async function fetchNumberClick(href, page, node) {
 
     // console.log('Pagination was updated');
     const newActive = document.querySelectorAll('.main__pagination a');
-
+    // console.log(newActive);
     newActive.forEach(elem => {
       if (elem.textContent == node.textContent) {
         elem.classList.add('js__pagination_active');
