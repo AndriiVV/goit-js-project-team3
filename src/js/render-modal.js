@@ -1,7 +1,7 @@
 const modalEl = document.querySelector('.event-card');
 
 function renderModal(item) {
-  console.log(item.name);
+  // console.log(item.name);
 
   const maxStandart = Math.floor(item.priceRanges[0].max / 2);
   const minVip = Math.ceil(item.priceRanges[0].max / 2);
