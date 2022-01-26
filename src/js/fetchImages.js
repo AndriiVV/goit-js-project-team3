@@ -10,18 +10,22 @@ const cardEl = document.querySelector('.search__list');
 const mainPagin = document.querySelector('.main__pagination');
 
 async function fetchUrl(keyword, code) {
+  console.log('fetchUrl is running (before try)...');
   try {
     const response = await fetch(
       `https://app.ticketmaster.com/discovery/v2/events.json?keyword=${keyword}&countryCode=${code}&source=Ticketmaster&apikey=841T1YMOPnVKBAAycVhND0Lj4GpnyoMw`,
     );
     const data = await response.json();
     renderCard(data._embedded.events);
-    // console.log(
-    //   'Pages for renderPage: ',
-    //   Math.min(47, +data.page.totalPages),
-    //   ' of ',
-    //   data.page.totalPages,
-    // );
+
+  //  console.log(
+  //    'Pages for renderPage: ',
+  //    Math.min(47, +data.page.totalPages),
+  //    ' of ',
+  //    data.page.totalPages,
+  //  );
+  //  console.log('fetchUrl is running (in try)... Next is renderPage');
+
     renderPage(Math.min(47, +data.page.totalPages), data._links.self.href);
     // console.log(data);
     if (data.page.totalElements !== 0) {

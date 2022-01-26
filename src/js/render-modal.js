@@ -1,6 +1,8 @@
 const modalEl = document.querySelector('.event-card');
 
+
 function renderModal(item,info) {
+
   // console.log(item.name);
 
   const maxStandart = Math.floor(item.priceRanges[0].max / 2);

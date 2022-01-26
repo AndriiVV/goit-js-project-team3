@@ -3,6 +3,7 @@ import fetchUrl from './fetchImages';
 const pageContainer = document.querySelector('.main__pagination');
 
 function renderPage(totalPage, url) {
+  // console.log('renderPage is running... totalPage is: ', totalPage);
   pageContainer.innerHTML = '';
   if (totalPage <= 7) {
     for (let i = 1; i <= totalPage; i++) {
