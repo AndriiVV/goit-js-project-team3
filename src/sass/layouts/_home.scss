@@ -129,34 +129,56 @@ body {
     font-weight: 700;
     color: var(--accent-primary-color);
     font-family: Montserrat;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.25;
     text-align: center;
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: 16px;
+    }
   }
   &__transform {
     text-align: center;
-    width: 170px;
+    width: 120px;
     overflow: hidden;
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      width: 170px;
+    }
+    @media screen and (min-width: 1280px) {
+      width: 170px;
+    }
   }
   &__transform2 {
     text-align: center;
-    width: 170px;
+    width: 120px;
     overflow: hidden;
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      width: 170px;
+    }
+    @media screen and (min-width: 1280px) {
+      width: 170px;
+    }
   }
   &__data {
     font-family: Montserrat;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.25;
     color: var(--primary-text-color);
     font-weight: 400;
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: 16px;
+    }
   }
   &__place {
     font-family: Montserrat;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 1.25;
     color: var(--primary-text-color);
     font-weight: 600;
@@ -166,21 +188,9 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
-    // &:hover {
-    //   margin-left: -100px;
-    // }
-    i {
-      width: 7px;
-      height: 10px;
-      color: white;
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
     }
-    // &::before {
-    //   width: 7px;
-    //   height: 10px;
-    //   background-color: #fff;
-    //   background-image: url('https://img.icons8.com/ios-filled/50/000000/marker.png');
-    // }
   }
 }
 .place-icon {
@@ -205,6 +215,9 @@ body {
   overflow: hidden;
   @media screen and (max-width: 767px) {
     display: none;
+  }
+  @media screen and(max-width: 768px) and (max-width: 1279px) {
+    max-height: 2582px;
   }
 
   &__line1 {
@@ -279,9 +292,15 @@ body {
   display: flex;
   justify-content: space-between;
   width: 94%;
+  max-height: 2376px;
+  overflow: hidden;
   @media screen and (max-width: 767px) {
     display: none;
   }
+  @media screen and(max-width: 768px) and (max-width: 1279px) {
+    max-height: 2582px;
+  }
+
   &__right {
     // position: absolute;
     top: 0;

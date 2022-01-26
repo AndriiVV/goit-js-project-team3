@@ -1,5 +1,5 @@
 import fetchUrl from './fetchImages';
-import renderCardForTablet from "./firstFetch"
+import renderCardForTablet from './firstFetch';
 // import vectorSvg from '../images/bg-logo-1x-mob.png';
 
 const cardEL = document.querySelector('.search__list');
@@ -41,25 +41,24 @@ function renderCard(info) {
       .join('');
 
     cardEL.innerHTML = cardMarkup;
-    const spanText = document.querySelectorAll(".card-text__name")
-    const spanAll = [...spanText]
-    const placeText = document.querySelectorAll(".card-text__place")
-    const placeAll = [...placeText]
-// console.log(placeAll);
+    const spanText = document.querySelectorAll('.card-text__name');
+    const spanAll = [...spanText];
+    const placeText = document.querySelectorAll('.card-text__place');
+    const placeAll = [...placeText];
+    // console.log(placeAll);
 
-    const spanMap = spanAll.map(item => { 
+    const spanMap = spanAll.map(item => {
       if (item.textContent.length < 20) {
-       return item.classList.remove("animation__scss")
+        return item.classList.remove('animation__scss');
       }
-    })
+    });
 
-    const placeMap = placeAll.map(item => { 
+    const placeMap = placeAll.map(item => {
       console.log(item.textContent.length);
-      if (item.textContent.length < 75) {
-       return item.classList.remove("animation__scss")
+      if (item.textContent.length < 15) {
+        return item.classList.remove('animation__scss');
       }
-    })
-    
+    });
   }
 }
 

@@ -1,15 +1,20 @@
 .pagination__wrap {
-  padding: 80px 0 0 0;
+  padding: 60px 0;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    padding: 60px 0;
+    @media screen and (min-width: 1280px) {
+      padding: 80px 0;
+    }
+  }
 }
 
 .main__pagination {
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 
   .main__pagination_item {
-    margin-right: 15px;
+    margin-right: 5px;
     width: 30px;
     height: 30px;
     display: flex;
