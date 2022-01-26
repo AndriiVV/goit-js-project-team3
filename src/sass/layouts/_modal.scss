@@ -125,6 +125,7 @@
     }
   }
   &__img-box {
+    box-shadow: 0px 0px 4px 8px rgb(30 20 60 / 12%);
     margin: 0 auto 18px;
     width: 102px;
     height: 102px;
@@ -231,6 +232,7 @@
 
   &__btn-buy {
     position: relative;
+    border: 1px solid blue;
     margin-top: 10px;
     color: var(--primary-text-color);
     background-color: var(--secondary-accent-color);
@@ -242,7 +244,7 @@
     padding: 10px 35px;
     overflow: hidden;
     &:hover {
-      border: 2px solid #dc56c5;
+      border: 1px solid #dc56c5;
       color: #dc56c5;
       background-color: whitesmoke;
       cursor: pointer;
@@ -262,20 +264,7 @@
     &:hover:before {
       left: 7px;
     }
-    // &:before {
-    //   content: '';
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 0;
-    //   height: 42px;
-    //   background: rgba(255, 255, 255, 0.3);
-    //   border-radius: 5px;
-    //   transition: all 2s ease;
-    // }
-    // &:hover:before {
-    //   width: 100%;
-    // }
+
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       margin-bottom: 20px;
     }
