@@ -100,11 +100,14 @@ async function fetchNumberClick(href, page, node) {
     const response = await fetch(baseUrl + href + page);
     const data = await response.json();
 
+    const maxPages = Math.min(47, data.page.totalPages);
+    console.log('Fetch number click: ', maxPages, ' of ', data.page.totalPages);
+
     if (data.page.totalPages > 1) {
       renderCard(data._embedded.events);
     }
 
-    if (data.page.totalPages <= 7) {
+    if (maxPages <= 7) {
       for (let i = 1; i <= totalPages; i++) {
         let isPageActive = '';
         if (i == +node.textContent) {
@@ -116,7 +119,7 @@ async function fetchNumberClick(href, page, node) {
           <a ${isPageActive} data-href="${href}">${i}</a>
           </li>`;
       }
-    } else if (data.page.number < 4 && data.page.totalPages <= 47) {
+    } else if (data.page.number < 4) {
       pageUl.innerHTML = `<li class="main__pagination_item ">
           <a data-href="${href}">1</a>
           </li>
@@ -136,9 +139,9 @@ async function fetchNumberClick(href, page, node) {
           ...
           </li>
           <li class="main__pagination_item ">
-          <a data-href="${href}">${data.page.totalPages}</a>
+          <a data-href="${href}">${maxPages}</a>
         </li>`;
-    } else if (data.page.number >= data.page.totalPages - 4) {
+    } else if (data.page.number >= maxPages - 4) {
       pageUl.innerHTML = `<li class="main__pagination_item ">
           <a data-href="${href}">1</a>
           </li>
@@ -146,45 +149,44 @@ async function fetchNumberClick(href, page, node) {
           ...
           </li>
           <li class="main__pagination_item ">
-          <a data-href="${href}">${data.page.totalPages - 4}</a>
+          <a data-href="${href}">${maxPages - 4}</a>
           </li>
           <li class="main__pagination_item ">
-          <a data-href="${href}">${data.page.totalPages - 3}</a>
+          <a data-href="${href}">${maxPages - 3}</a>
           </li>
           <li class="main__pagination_item ">
-          <a data-href="${href}">${data.page.totalPages - 2}</a>
+          <a data-href="${href}">${maxPages - 2}</a>
           </li>
           <li class="main__pagination_item ">
-          <a data-href="${href}">${data.page.totalPages - 1}</a>
+          <a data-href="${href}">${maxPages - 1}</a>
           </li>
           <li class="main__pagination_item ">
-          <a data-href="${href}">${data.page.totalPages}</a>
+          <a data-href="${href}">${maxPages}</a>
         </li>`;
-    } else if(data.page.totalPages <= 47){
+      // } else if (data.page.totalPages <= 47) {
+      //   pageUl.innerHTML = `<li class="main__pagination_item ">
+      //       <a data-href="${href}">1</a>
+      //       </li>
+      //       <li class="main__pagination_item main__pagination_dats">
+      //       ...
+      //       </li>
+      //       <li class="main__pagination_item ">
+      //       <a data-href="${href}">${data.page.number}</a>
+      //       </li>
+      //       <li class="main__pagination_item ">
+      //       <a data-href="${href}">${data.page.number + 1}</a>
+      //       </li>
+      //       <li class="main__pagination_item ">
+      //       <a data-href="${href}">${data.page.number + 2}</a>
+      //       </li>
+      //       <li class="main__pagination_item main__pagination_dats" >
+      //       ...
+      //       </li>
+      //       <li class="main__pagination_item ">
+      //       <a data-href="${href}">${data.page.totalPages}</a>
+      //     </li>`;
+    } else {
       pageUl.innerHTML = `<li class="main__pagination_item ">
-          <a data-href="${href}">1</a>
-          </li>
-          <li class="main__pagination_item main__pagination_dats">
-          ...
-          </li>
-          <li class="main__pagination_item ">
-          <a data-href="${href}">${data.page.number}</a>
-          </li>
-          <li class="main__pagination_item ">
-          <a data-href="${href}">${data.page.number + 1}</a>
-          </li>
-          <li class="main__pagination_item ">
-          <a data-href="${href}">${data.page.number + 2}</a>
-          </li>
-          <li class="main__pagination_item main__pagination_dats" >
-          ...
-          </li>
-          <li class="main__pagination_item ">
-          <a data-href="${href}">${data.page.totalPages}</a>
-        </li>`;
-    }
-    else if(data.page.totalPages > 47) {
-            pageUl.innerHTML = `<li class="main__pagination_item ">
           <a data-href="${href}">1</a>
           </li>
           <li class="main__pagination_item main__pagination_dats">
@@ -205,7 +207,6 @@ async function fetchNumberClick(href, page, node) {
           <li class="main__pagination_item ">
           <a data-href="${href}">47</a>
         </li>`;
-      
     }
   } catch (error) {
     error.message;
