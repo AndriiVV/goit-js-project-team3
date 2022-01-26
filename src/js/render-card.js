@@ -1,4 +1,3 @@
-
 // import fetchUrl from './fetchImages';
 // import renderCardForTablet from './firstFetch';
 
@@ -32,9 +31,7 @@ function renderCard(info) {
         <span id="${item.id}" class="card-text__data">${item.dates.start.localDate}</span>        
         <div id="${item.id}"class="card-text__transform2 ">
           <span id="${item.id}" class="card-text__place animation__scss">
-            <svg id="${item.id}" class="place-icon ">
-              <use href="./images/symbol-defs.svg#icon-vector"></use>
-            </svg>&#10207; ${item._embedded.venues[0].name}
+            &#10207; ${item._embedded.venues[0].name}
           </span>
         </div>
       </div>
@@ -45,18 +42,16 @@ function renderCard(info) {
 
     cardEL.innerHTML = cardMarkup;
 
-
     const spanText = document.querySelectorAll('.card-text__name');
     removeAnimationSpanText([...spanText]);
 
     const placeText = document.querySelectorAll('.card-text__place');
     removeAnimationPlaceText([...placeText]);
-
   }
 }
 function removeAnimationSpanText(nameItems) {
   const spanMap = nameItems.map(item => {
-    if (item.textContent.length < 20) {
+    if (item.textContent.length < 15) {
       return item.classList.remove('animation__scss');
     }
   });

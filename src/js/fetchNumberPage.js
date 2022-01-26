@@ -101,7 +101,7 @@ async function fetchNumberClick(href, page, node) {
     const response = await fetch(baseUrl + href + page);
     const data = await response.json();
 
-    const maxPages = Math.min(47, data.page.totalPages);
+    const maxPages = Math.min(50, data.page.totalPages);
 
     // console.log('Fetch number click (on try): ', maxPages, ' of ', data.page.totalPages);
 
@@ -174,7 +174,7 @@ async function fetchNumberClick(href, page, node) {
           <li class="main__pagination_item ">
           <a data-href="${href}">${maxPages}</a>
         </li>`;
-      // } else if (data.page.totalPages <= 47) {
+      // } else if (data.page.totalPages <= 50) {
       //   pageUl.innerHTML = `<li class="main__pagination_item ">
       //       <a data-href="${href}">1</a>
       //       </li>

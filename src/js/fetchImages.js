@@ -26,7 +26,7 @@ async function fetchUrl(keyword, code) {
     // );
     // console.log('fetchUrl is running (in try)... Next is renderPage');
 
-    renderPage(Math.min(47, +data.page.totalPages), data._links.self.href);
+    renderPage(Math.min(50, +data.page.totalPages), data._links.self.href);
     // console.log(data);
     if (data.page.totalElements !== 0) {
       setTimeout(() => {
