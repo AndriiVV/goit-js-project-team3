@@ -111,6 +111,17 @@ body {
     }
   }
 }
+.animation__scss {
+  -webkit-transition: 8.3s;
+  -moz-transition: 8.3s;
+  transition: 8.3s;
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  &:hover {
+    margin-left: -300px;
+  }
+}
 .card-text {
   &__name {
     font-weight: 700;
@@ -123,37 +134,16 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    -webkit-transition: 3.3s;
-    -moz-transition: 3.3s;
-    transition: 3.3s;
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    transition-timing-function: linear;
-    &:hover {
-      margin-left: -300px;
-    }
   }
   &__transform {
     text-align: center;
     width: 170px;
     overflow: hidden;
-    -webkit-transition: 3.3s;
-    -moz-transition: 3.3s;
-    transition: 3.3s;
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    transition-timing-function: linear;
   }
   &__transform2 {
     text-align: center;
     width: 170px;
     overflow: hidden;
-    -webkit-transition: 3.3s;
-    -moz-transition: 3.3s;
-    transition: 3.3s;
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    transition-timing-function: linear;
   }
   &__data {
     font-family: Montserrat;
@@ -174,15 +164,10 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    -webkit-transition: 3.3s;
-    -moz-transition: 3.3s;
-    transition: 3.3s;
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    transition-timing-function: linear;
-    &:hover {
-      margin-left: -100px;
-    }
+
+    // &:hover {
+    //   margin-left: -100px;
+    // }
     i {
       width: 7px;
       height: 10px;

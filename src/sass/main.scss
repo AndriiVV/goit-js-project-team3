@@ -8,6 +8,7 @@
 
 @import './utils/variables';
 @import './utils/mixins';
+@import './utils/animation';
 
 @import './base/reset';
 @import './base/common';
@@ -21,3 +22,4 @@
 @import './layouts/about';
 @import './layouts/modal';
 @import './layouts/pagination';
+@import './layouts/back-to-top.scss';

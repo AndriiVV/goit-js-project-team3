@@ -1,24 +1,24 @@
 .backdrop-about {
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  left: 0;
+  opacity: 1;
   transform: scale(1);
   transition-property: inherit;
-  transition-duration: 500ms;
-  padding: 20px 20px;
+  transition-duration: 300ms;
   background: rgba(32, 13, 29, 0.6);
   backdrop-filter: blur(3px);
-  width: 100%;
-  min-height: 100%;
+  width: 100vw;
+  height: 100%;
   z-index: 10;
+  overflow-y: scroll;
 }
 
 .about-card {
-  position: relative;
-  margin: 0 auto;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
   min-width: 280px;
   width: 70%;
   height: 730px;

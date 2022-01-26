@@ -10,8 +10,9 @@ function onClickCard(event) {
   if (event.target.tagName === 'UL') {
     return false;
   } else {
-    modal.classList.remove('visually-hidden');
-     setTimeout(() => {Notiflix.Notify.info(' <<-- Here You Can See More Information About This EVENT ')},500)
-    fetchEvent(event.target.id);
+
+    modal.classList.remove("visually-hidden")
+     setTimeout(() => {Notiflix.Notify.info(' 👈 Here You Can See More Information About This EVENT ')},500)
+    fetchEvent(event.target.id)
   }
 }
