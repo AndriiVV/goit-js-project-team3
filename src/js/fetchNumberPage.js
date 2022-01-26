@@ -105,7 +105,6 @@ async function fetchNumberClick(href, page, node) {
 
     // console.log('Fetch number click (on try): ', maxPages, ' of ', data.page.totalPages);
 
-
     if (data.page.totalPages > 1) {
       renderCard(data._embedded.events);
     }
@@ -209,7 +208,7 @@ async function fetchNumberClick(href, page, node) {
           ...
           </li>
           <li class="main__pagination_item ">
-          <a data-href="${href}">47</a>
+          <a data-href="${href}">${maxPages}</a>
         </li>`;
     }
 
