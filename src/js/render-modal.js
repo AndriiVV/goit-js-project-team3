@@ -1,7 +1,7 @@
 const modalEl = document.querySelector('.event-card');
 
-function renderModal(item) {
-  console.log(item.name);
+
+function renderModal(item,info) {
 
   const maxStandart = Math.floor(item.priceRanges[0].max / 2);
   const minVip = Math.ceil(item.priceRanges[0].max / 2);
@@ -26,7 +26,7 @@ function renderModal(item) {
         <h3 class="event-card__info">INFO</h3>
         <div id="element">
         <p class="event-card__text ">
-          ${item.info}
+          ${info}
         </p>
         </div>
         <h3 class="event-card__where">WHEN</h3>
@@ -48,11 +48,12 @@ function renderModal(item) {
       <p class="event-card__bar-code__text">||| || || |||</p>
       <p class="event-card__text">VIP ${minVip}-${item.priceRanges[0].max} ${item.priceRanges[0].currency}</p>
        
-      </div>
+      </div class="wrap-author">
        <a href="${item.url}" target="_blank" class="event-card__btn-buy">BUY TICKETS</a>
        </div>
        </div>
-      <button class="event-card__btn-more">MORE FROM THIS AUTHOR</button>
+      <button class="event-card__btn-more">MORE FROM THIS AUTHOR <span class="hidden-name">${item.name}</span></button>
+      
       </div>
       
     `;

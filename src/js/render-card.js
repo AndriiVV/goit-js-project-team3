@@ -1,10 +1,13 @@
-import fetchUrl from './fetchImages';
-import renderCardForTablet from './firstFetch';
+
+// import fetchUrl from './fetchImages';
+// import renderCardForTablet from './firstFetch';
+
 // import vectorSvg from '../images/bg-logo-1x-mob.png';
 
 const cardEL = document.querySelector('.search__list');
 
 function renderCard(info) {
+  // console.log(info);
   if (info.length === 0) {
     cardEL.innerHTML = '';
     return false;
@@ -41,29 +44,30 @@ function renderCard(info) {
       .join('');
 
     cardEL.innerHTML = cardMarkup;
+
+
     const spanText = document.querySelectorAll('.card-text__name');
-    const spanAll = [...spanText];
+    removeAnimationSpanText([...spanText]);
+
     const placeText = document.querySelectorAll('.card-text__place');
-    const placeAll = [...placeText];
-    // console.log(placeAll);
+    removeAnimationPlaceText([...placeText]);
 
-    const spanMap = spanAll.map(item => {
-      if (item.textContent.length < 20) {
-        return item.classList.remove('animation__scss');
-      }
-    });
-
-    const placeMap = placeAll.map(item => {
-      console.log(item.textContent.length);
-      if (item.textContent.length < 15) {
-        return item.classList.remove('animation__scss');
-      }
-    });
   }
+}
+function removeAnimationSpanText(nameItems) {
+  const spanMap = nameItems.map(item => {
+    if (item.textContent.length < 20) {
+      return item.classList.remove('animation__scss');
+    }
+  });
+}
+
+function removeAnimationPlaceText(placeItems) {
+  const placeMap = placeItems.map(item => {
+    if (item.textContent.length < 75) {
+      return item.classList.remove('animation__scss');
+    }
+  });
 }
 
 export default renderCard;
-
-// <svg width="7" height="10" viewBox="0 0 7 10" class="place-icon">
-//   <use href="${vectorSvg}"></use>
-// </svg>;

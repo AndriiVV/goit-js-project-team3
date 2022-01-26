@@ -5,6 +5,7 @@ const baseUrl = `https://app.ticketmaster.com`;
 const pageUl = document.querySelector('.main__pagination');
 
 async function fetchNumberClick(href, page, node) {
+  // console.log('fetchNumberClick is running...');
   // axios.get(baseUrl + href + page).then(res => {
   //    console.log(res.data);
   //   if (res.data.page.totalPages > 1) {
@@ -101,24 +102,34 @@ async function fetchNumberClick(href, page, node) {
     const data = await response.json();
 
     const maxPages = Math.min(47, data.page.totalPages);
-    console.log('Fetch number click: ', maxPages, ' of ', data.page.totalPages);
+
+    // console.log('Fetch number click (on try): ', maxPages, ' of ', data.page.totalPages);
 
     if (data.page.totalPages > 1) {
       renderCard(data._embedded.events);
     }
 
     if (maxPages <= 7) {
-      for (let i = 1; i <= totalPages; i++) {
-        let isPageActive = '';
-        if (i == +node.textContent) {
-          isPageActive = 'class="js__pagination_active"';
-        }
-
-        pageUl.innerHTML += `
+      let newPages = '';
+      // console.log('Max pages <= 7, update pagination');
+      for (let i = 1; i <= maxPages; i++) {
+        newPages += `
           <li class="main__pagination_item ">
-          <a ${isPageActive} data-href="${href}">${i}</a>
+          <a data-href="${href}">${i}</a>
           </li>`;
       }
+      // console.log('New markup is ', newPages);
+      // console.log('Key Node is: ', pageUl);
+      pageUl.innerHTML = newPages;
+
+      const newActive = document.querySelectorAll('.main__pagination a');
+      // console.log(newActive);
+      newActive.forEach(elem => {
+        if (elem.textContent == node.textContent) {
+          elem.classList.add('js__pagination_active');
+          // console.log('New active node is ', elem);
+        }
+      });
     } else if (data.page.number < 4) {
       pageUl.innerHTML = `<li class="main__pagination_item ">
           <a data-href="${href}">1</a>
@@ -205,9 +216,19 @@ async function fetchNumberClick(href, page, node) {
           ...
           </li>
           <li class="main__pagination_item ">
-          <a data-href="${href}">47</a>
+          <a data-href="${href}">${maxPages}</a>
         </li>`;
     }
+
+    // console.log('Pagination was updated');
+    const newActive = document.querySelectorAll('.main__pagination a');
+    // console.log(newActive);
+    newActive.forEach(elem => {
+      if (elem.textContent == node.textContent) {
+        elem.classList.add('js__pagination_active');
+        // console.log('New active node is ', elem);
+      }
+    });
   } catch (error) {
     error.message;
   }

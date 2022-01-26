@@ -5,7 +5,15 @@ function fetchEvent(id) {
  
   return axios.get(`https://app.ticketmaster.com/discovery/v2/events/${id}.json?apikey=841T1YMOPnVKBAAycVhND0Lj4GpnyoMw`)
     .then(res => {
-      renderModal(res.data)
+      if (res.data.info === undefined) {
+        renderModal(res.data,`Coming soon   ╮(￣_￣)╭ `)
+        
+      }
+      else {
+     
+        renderModal(res.data,res.data.info)
+      }
+      
       // console.log(res.data);
       // console.log(res.data.info)
       // console.log(res.data.dates.start.localDate)

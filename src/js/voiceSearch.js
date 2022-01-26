@@ -7,7 +7,7 @@ const info = document.querySelector(".info");
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; // if none exists -> undefined
 
 if(SpeechRecognition) {
-  console.log("Your Browser supports speech Recognition");
+  // console.log("Your Browser supports speech Recognition");
   
   const recognition = new SpeechRecognition();
   recognition.continuous = true;
@@ -22,7 +22,7 @@ if(SpeechRecognition) {
   micBtn.addEventListener("click", micBtnClick);
   function micBtnClick() {
     if(micIcon.classList.contains("fa-microphone")) { // Start Voice Recognition
-      recognition.start(); // First time you have to allow access to mic!
+      recognition.start(); 
     }
     else {
       recognition.stop();
@@ -34,7 +34,7 @@ if(SpeechRecognition) {
     micIcon.classList.remove("fa-microphone");
     micIcon.classList.add("fa-microphone-slash");
     searchFormInput.focus();
-    console.log("Voice activated, SPEAK");
+    // console.log("Voice activated, SPEAK");
   }
 
   recognition.addEventListener("end", endSpeechRecognition); // <=> recognition.onend = function() {...}
@@ -42,7 +42,7 @@ if(SpeechRecognition) {
     micIcon.classList.remove("fa-microphone-slash");
     micIcon.classList.add("fa-microphone");
     searchFormInput.focus();
-    console.log("Speech recognition service disconnected");
+    // console.log("Speech recognition service disconnected");
   }
 
   recognition.addEventListener("result", resultOfSpeechRecognition); // <=> recognition.onresult = function(event) {...} - Fires when you stop talking
@@ -73,8 +73,6 @@ if(SpeechRecognition) {
     //   searchForm.submit();
     // }, 500);
   }
-  
-  // info.textContent = 'Voice Commands: "stop recording", "reset input", "go"';
   
 }
 else {
