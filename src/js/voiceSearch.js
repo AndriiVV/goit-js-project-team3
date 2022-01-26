@@ -74,10 +74,8 @@ if(SpeechRecognition) {
     // }, 500);
   }
   
-  // info.textContent = 'Voice Commands: "stop recording", "reset input", "go"';
-  
 }
 else {
-  // console.log("Your Browser does not support speech Recognition");
+  console.log("Your Browser does not support speech Recognition");
   // info.textContent = "Your Browser does not support Speech Recognition";
 }

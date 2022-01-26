@@ -1,10 +1,8 @@
-import fetchUrl from './fetchImages';
-import renderCardForTablet from "./firstFetch"
-// import vectorSvg from '../images/bg-logo-1x-mob.png';
-
+  
 const cardEL = document.querySelector('.search__list');
 
 function renderCard(info) {
+  console.log(info);
   if (info.length === 0) {
     cardEL.innerHTML = '';
     return false;
@@ -59,7 +57,7 @@ function removeAnimationSpanText(nameItems) {
 }
 
 function removeAnimationPlaceText(placeItems) {
-   const placeMap = placeAll.map(item => { 
+   const placeMap = placeItems.map(item => { 
       if (item.textContent.length < 75) {
        return item.classList.remove("animation__scss")
       }

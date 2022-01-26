@@ -2,7 +2,7 @@ import renderCard from './render-card';
 import renderPage from './render-page';
 import Notiflix from 'notiflix';
 
-console.log(window.screen.width);
+
 async function startPage(idCountry, countryName) {
   try {
     if (window.screen.width >= 768 && window.screen.width <= 1278) {
