@@ -1,11 +1,14 @@
 .header {
+  width: 100%;
   height: 364px;
   padding: 78px 25px;
   @media screen and (min-width: 768px) {
+    height: 364px;
     padding: 40px 50px;
   }
   @media screen and (min-width: 1280px) {
     height: 446px;
+    padding: 40px 50px;
   }
 }
 
@@ -16,16 +19,14 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100vw;
+  width: 100%;
 }
 
 .header__background {
   height: 364px;
-  width: 100vw;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-
   background-image: url(../images/background-hero-1x-mob.jpg);
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -34,8 +35,7 @@
   z-index: -4;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    background-size: contain;
-    height: 446px;
+    height: 364px;
     background-image: url(../images/background-hero-1x-tab.jpg);
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
       background-image: url(../images/background-hero-2x-tab.jpg);
@@ -43,7 +43,6 @@
   }
 
   @media screen and (min-width: 1280px) {
-    background-size: contain;
     height: 446px;
     background-image: url(../images/background-hero-1x.jpg);
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -53,12 +52,15 @@
 }
 
 .header__overlay {
-  height: 100%;
+  height: 364px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   background-color: rgba(11, 11, 11, 0.5);
   z-index: -3;
+  @media screen and (min-width: 1280px) {
+    height: 446px;
+  }
 }
 
 .header__overlay_bottom {
@@ -66,8 +68,12 @@
   height: 102px;
   background: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(14, 14, 14, 0.8) 100%);
   z-index: -2;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    top: 262px;
+  }
 
   @media screen and (min-width: 1280px) {
+    top: 344px;
     background: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%);
   }
 }
