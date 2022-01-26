@@ -2,7 +2,6 @@ import renderCard from './render-card';
 import renderPage from './render-page';
 import Notiflix from 'notiflix';
 
-// console.log(window.screen.width);
 async function startPage(idCountry, countryName) {
   // console.log('startPage is running...');
   try {

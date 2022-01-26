@@ -248,6 +248,7 @@
     background-color: transparent;
     border: 1px solid var(--secondary-accent-color);
     border-radius: 5px;
+
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       margin-top: 13px;
     }
@@ -267,6 +268,7 @@
     }
   }
 }
+
 // ========= SCROLL INFO ==========
 #element {
   overflow-y: scroll;

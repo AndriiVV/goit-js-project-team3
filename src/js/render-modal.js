@@ -3,8 +3,6 @@ const modalEl = document.querySelector('.event-card');
 
 function renderModal(item,info) {
 
-  // console.log(item.name);
-
   const maxStandart = Math.floor(item.priceRanges[0].max / 2);
   const minVip = Math.ceil(item.priceRanges[0].max / 2);
 
@@ -50,7 +48,7 @@ function renderModal(item,info) {
       <p class="event-card__bar-code__text">||| || || |||</p>
       <p class="event-card__text">VIP ${minVip}-${item.priceRanges[0].max} ${item.priceRanges[0].currency}</p>
        
-      </div>
+      </div class="wrap-author">
        <a href="${item.url}" target="_blank" class="event-card__btn-buy">BUY TICKETS</a>
        </div>
        </div>
