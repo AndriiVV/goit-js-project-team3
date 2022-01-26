@@ -1,4 +1,8 @@
-  
+
+// import fetchUrl from './fetchImages';
+// import renderCardForTablet from './firstFetch';
+// import vectorSvg from '../images/bg-logo-1x-mob.png';
+
 const cardEL = document.querySelector('.search__list');
 
 function renderCard(info) {
@@ -40,6 +44,7 @@ function renderCard(info) {
 
     cardEL.innerHTML = cardMarkup;
 
+
     const spanText = document.querySelectorAll(".card-text__name")
     removeAnimationSpanText([...spanText])
 
@@ -50,18 +55,23 @@ function renderCard(info) {
 function removeAnimationSpanText(nameItems) {
   
   const spanMap = nameItems.map(item => { 
+
       if (item.textContent.length < 20) {
-       return item.classList.remove("animation__scss")
+        return item.classList.remove('animation__scss');
       }
     })
 }
 
 function removeAnimationPlaceText(placeItems) {
+
    const placeMap = placeItems.map(item => { 
+
       if (item.textContent.length < 75) {
-       return item.classList.remove("animation__scss")
+        return item.classList.remove('animation__scss');
       }
+
     })
+
 }
 
 export default renderCard;

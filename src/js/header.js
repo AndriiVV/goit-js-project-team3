@@ -27,7 +27,6 @@ nodeCountries.innerHTML = alpha;
 new NiceSelect(document.getElementById('a-select'), { searchable: true });
 
 const refs = {
-
   form: document.querySelector('#search-form'),
   inputSearch: document.querySelector('[name=q]'),
   inputCountry: document.querySelector('div.nice-select.form-field-country li.selected'),
@@ -41,29 +40,28 @@ let code = '';
 let searchId = '';
 let page = 1;
 
-function renderSearchCountry(countries) {
-    const markup = countries
-        .map(item => {
-            code = item.alpha;
-            return `<li
-    class="country-item"> <span class="text-item"> ${item.name} / (${item.alpha})</span> </li>
-    `;
-        })
-        .join('');
-}
-renderSearchCountry(countries);
+// function renderSearchCountry(countries) {
+//     const markup = countries
+//         .map(item => {
+//             code = item.alpha;
+//             return `<li
+//     class="country-item"> <span class="text-item"> ${item.name} / (${item.alpha})</span> </li>
+//     `;
+//         })
+//         .join('');
+// }
+// renderSearchCountry(countries);
 
 refs.form.addEventListener('submit', onSubmitForm);
 
 function onSubmitForm(event) {
-
   event.preventDefault();
   searchId = event.target.q.value;
 
   code = document.querySelector('div.nice-select.form-field-country li.selected').dataset.value;
   fetchUrl(searchId, code);
 
-    event.target.reset();
+  event.target.reset();
 }
 
 export default onSubmitForm;

@@ -5,6 +5,7 @@ const baseUrl = `https://app.ticketmaster.com`;
 const pageUl = document.querySelector('.main__pagination');
 
 async function fetchNumberClick(href, page, node) {
+  // console.log('fetchNumberClick is running...');
   // axios.get(baseUrl + href + page).then(res => {
   //    console.log(res.data);
   //   if (res.data.page.totalPages > 1) {
@@ -101,7 +102,9 @@ async function fetchNumberClick(href, page, node) {
     const data = await response.json();
 
     const maxPages = Math.min(47, data.page.totalPages);
-    // console.log('Fetch number click: ', maxPages, ' of ', data.page.totalPages);
+
+    // console.log('Fetch number click (on try): ', maxPages, ' of ', data.page.totalPages);
+
 
     if (data.page.totalPages > 1) {
       renderCard(data._embedded.events);
@@ -110,7 +113,8 @@ async function fetchNumberClick(href, page, node) {
     if (maxPages <= 7) {
       for (let i = 1; i <= totalPages; i++) {
         let isPageActive = '';
-        if (i == +node.textContent) {
+        if (i === +node.textContent) {
+          console.log('Page ', node.textContent, ' have to be active! ', i);
           isPageActive = 'class="js__pagination_active"';
         }
 
@@ -208,6 +212,16 @@ async function fetchNumberClick(href, page, node) {
           <a data-href="${href}">47</a>
         </li>`;
     }
+
+    // console.log('Pagination was updated');
+    const newActive = document.querySelectorAll('.main__pagination a');
+
+    newActive.forEach(elem => {
+      if (elem.textContent == node.textContent) {
+        elem.classList.add('js__pagination_active');
+        // console.log('New active node is ', elem);
+      }
+    });
   } catch (error) {
     error.message;
   }
