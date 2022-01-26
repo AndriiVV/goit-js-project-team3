@@ -15,11 +15,11 @@
 }
 .modal-event-card {
   position: absolute;
-  top: 5%;
+  top: 2%;
   left: 50%;
   transform: translateX(-50%);
   width: 272px;
-  height: 915px;
+  height: 835px;
   background-color: var(--modal-bg-color);
   border-top-left-radius: 150px;
   border-bottom-right-radius: 150px;
@@ -28,15 +28,15 @@
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     width: 595px;
-    height: 831px;
-    padding: 30px 30px 62px;
+    height: 820px;
+    padding: 15px 15px 62px 30px;
     border-top-left-radius: 300px;
     border-bottom-right-radius: 300px;
   }
   @media screen and (min-width: 1280px) {
     width: 830px;
     height: 825px;
-    padding: 30px 30px 62px;
+    padding: 20px 20px 62px 30px;
     border-top-left-radius: 300px;
     border-bottom-right-radius: 300px;
   }
@@ -71,6 +71,8 @@
       height: 100%;
     }
     @media screen and (min-width: 768px) and (max-width: 1279px) {
+      margin-top: 45px;
+      margin-left: 20px;
       display: flex;
       margin-top: 40px;
       width: 233px;
@@ -221,7 +223,7 @@
       display: inline-block;
       text-align: center;
       padding-top: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
 
       height: 40px;
       border-radius: 5px;
@@ -229,6 +231,7 @@
       font-size: 16px;
       line-height: 20px;
       @media screen and (min-width: 768px) and (max-width: 1279px) {
+        margin-bottom: 15px;
       }
       @media screen and (min-width: 1280px) {
         // margin-bottom: 31px;
@@ -283,9 +286,9 @@
   &__btn-more {
     padding-top: 9px;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 20px;
-    width: 230px;
+    width: 210px;
     height: 40px;
     color: var(--secondary-accent-color);
     background-color: transparent;
@@ -306,7 +309,7 @@
     }
 
     @media screen and (min-width: 768px) and (max-width: 1279px) {
-      margin-top: 13px;
+      margin-top: 5px;
     }
     @media screen and (min-width: 1280px) {
       margin-top: 14px;
