@@ -3,7 +3,7 @@ import Notiflix from 'notiflix';
 
 const formCard = document.querySelector('.search__list');
 const modal = document.querySelector('.backdrop');
-console.log(modal);
+// console.log(modal);
 formCard.addEventListener('click', onClickCard);
 function onClickCard(event) {
   event.preventDefault();

@@ -17,13 +17,15 @@ async function fetchUrl(keyword, code) {
     );
     const data = await response.json();
     renderCard(data._embedded.events);
-    console.log(
-      'Pages for renderPage: ',
-      Math.min(47, +data.page.totalPages),
-      ' of ',
-      data.page.totalPages,
-    );
-    console.log('fetchUrl is running (in try)... Next is renderPage');
+
+  //  console.log(
+  //    'Pages for renderPage: ',
+  //    Math.min(47, +data.page.totalPages),
+  //    ' of ',
+  //    data.page.totalPages,
+  //  );
+  //  console.log('fetchUrl is running (in try)... Next is renderPage');
+
     renderPage(Math.min(47, +data.page.totalPages), data._links.self.href);
     // console.log(data);
     if (data.page.totalElements !== 0) {

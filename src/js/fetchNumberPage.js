@@ -102,7 +102,9 @@ async function fetchNumberClick(href, page, node) {
     const data = await response.json();
 
     const maxPages = Math.min(47, data.page.totalPages);
+
     // console.log('Fetch number click (on try): ', maxPages, ' of ', data.page.totalPages);
+
 
     if (data.page.totalPages > 1) {
       renderCard(data._embedded.events);
