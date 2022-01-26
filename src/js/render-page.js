@@ -1,21 +1,65 @@
-import fetchUrl from "./fetchImages"
+import fetchUrl from './fetchImages';
 
-const PageContainer= document.querySelector(".main__pagination")
-let res = 0;
+const pageContainer = document.querySelector('.main__pagination');
 
-function renderPage(totalPage) {
-  console.log(totalPage);
+function renderPage(totalPage, url) {
+  // console.log('renderPage is running... totalPage is: ', totalPage);
+  pageContainer.innerHTML = '';
+  if (totalPage <= 7) {
+    for (let i = 1; i <= totalPage; i++) {
+      const firstPageActive = i === 1 ? 'class="js__pagination_active"' : '';
 
-  for (let i = 1; i <= totalPage; i++){
-    
-    PageContainer.innerHTML += `
-    <li class="main__pagination_item js__pagination_active">
-    <span>${i}</span>
+      pageContainer.innerHTML += `
+    <li class="main__pagination_item ">
+    <a ${firstPageActive} data-href="${url}">${i}</a>
+    </li>`;
+    }
+    // } else if (totalPage > 47) {
+    //   pageContainer.innerHTML = `
+    //   <li class="main__pagination_item ">
+    //   <a class="js__pagination_active" data-href="${url}">1</a>
+    //   </li>
+    //   <li class="main__pagination_item ">
+    //   <a data-href="${url}">2</a>
+    //   </li>
+    //   <li class="main__pagination_item ">
+    //   <a data-href="${url}">3</a>
+    //   </li>
+    //   <li class="main__pagination_item ">
+    //   <a data-href="${url}">4</a>
+    //   </li>
+    //   <li class="main__pagination_item ">
+    //   <a data-href="${url}">5</a>
+    //   </li>
+    //   <li class="main__pagination_item main__pagination_dats">
+    //   ...
+    //   </li>
+    //   <li class="main__pagination_item ">
+    //   <a data-href="${url}">47</a>
+    //   </li>`;
+  } else {
+    pageContainer.innerHTML = `
+    <li class="main__pagination_item ">
+    <a class="js__pagination_active" data-href="${url}">1</a>
     </li>
-    `
-    // res += 1
-    
-    console.log(i);
+    <li class="main__pagination_item ">
+    <a data-href="${url}">2</a>
+    </li>
+    <li class="main__pagination_item ">
+    <a data-href="${url}">3</a>
+    </li>
+    <li class="main__pagination_item ">
+    <a data-href="${url}">4</a>
+    </li>
+    <li class="main__pagination_item ">
+    <a data-href="${url}">5</a>
+    </li>
+    <li class="main__pagination_item main__pagination_dats">
+    ... 
+    </li>
+    <li class="main__pagination_item ">
+    <a data-href="${url}">${totalPage}</a>
+    </li>`;
   }
 }
 

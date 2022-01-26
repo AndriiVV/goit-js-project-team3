@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Заголовок страницы</title>
+    <title>Event Booster</title>
+    <link type="image/x-icon" href="./images/favicon.ico" rel="shortcut icon">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
@@ -11,6 +12,7 @@
       crossorigin="anonymous"
     />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
   </head>
   <body>
     <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
@@ -19,25 +21,39 @@
     <include src="./partials/home.html"></include>
     <include src="./partials/pagination.html"></include>
     <include src="./partials/footer.html"></include>
-
+<include src="./partials/back-to-top.html"></include>
     <include src="./partials/modal.html"></include>
     <include src="./partials/about.html"></include>
+    
     
 
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
 
     <script src="./js/header.js"></script>
-    <script src="./js/home.js"></script>
-    <script src="./js/footer.js"></script>
-    <script src="./js/pagination.js"></script>
+    <!-- <script src="./js/home.js"></script> -->
+    <!-- <script src="./js/footer.js"></script> -->
+    <!-- <script src="./js/pagination.js"></script> -->
+
 
 
     <script src="./js/about.js"></script>
     <script src="./js/modal.js"></script>
 
-    <script src="./js/countries.js"></script>
+    <!-- <script src="./js/countries.js"></script> -->
     <script src="./js/fetchImages.js"></script>
+    <script src="./js/fetchNumberPage.js"></script>
+    <script src=".//js/clickNumberPage.js"></script>
+    <script src=".//js/render-card.js"></script>
+    <script src=".//js/render-page.js"></script>
+    <script src="./js/fetchEvent.js"></script>
+    <script src="./js/clickCard.js"></script>
+    <script src="./js/render-modal.js"></script>
+    <script src="./js/firstFetch.js"></script>
+    <script src="./js/clickAuthor.js"></script>
+
+    <script src="./js/voiceSearch.js"></script>
+    <script src="./js/back-to-top.js"></script>
 
   </body>
 </html>

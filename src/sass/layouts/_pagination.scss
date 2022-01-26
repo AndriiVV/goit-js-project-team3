@@ -1,9 +1,22 @@
+.pagination__wrap {
+  padding: 60px 0;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    padding: 60px 0;
+    @media screen and (min-width: 1280px) {
+      padding: 80px 0;
+    }
+  }
+}
+
 .main__pagination {
   display: flex;
   justify-content: center;
-  padding: 80px 0;
+  align-items: center;
+
   .main__pagination_item {
-    margin-right: 15px;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,19 +26,23 @@
 .main__pagination_item a {
   text-decoration: none;
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
   font-size: 16px;
+  cursor: pointer;
 }
-.js__pagination_active a {
+.js__pagination_active {
   border: 1px solid var(--accent-primary-color);
   border-radius: 10px 0px;
-  color: var(--accent-primary-color);
+  color: var(--accent-primary-color) !important;
 }
-.main__pagination_item span {
+
+.main__pagination_dats {
   color: #fff;
+  cursor: default;
+  font-size: 18px;
 }
