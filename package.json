@@ -28,6 +28,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "axios": "^0.25.0",
+    "nice-select2": "^2.0.0",
     "notiflix": "^3.2.2"
   }
 }

@@ -167,22 +167,6 @@
   }
 }
 
-// .title-search__container {
-//   display: flex;
-//   flex-direction: column;
-
-//   @media screen and (min-width: 768px) {
-//     padding-top: 40px;
-//     align-items: flex-start;
-//   }
-
-//   @media screen and (min-width: 1280px) {
-//     padding-top: 40px;
-//     padding-left: 110px;
-//     align-items: center;
-//   }
-// }
-
 .title {
   color: var(--accent-primary-color);
   font-weight: 900;
@@ -257,7 +241,7 @@
 
 .search-input,
 .country-input {
-  z-index: 5;
+  z-index: 9;
   cursor: pointer;
   border-radius: 20px;
   border: none;
@@ -274,23 +258,19 @@
   font-weight: 400;
 }
 
-// .country-input {
-//   // appearance: none;
+// ===== Стили для оформления секции nice-select =====
 
-//   @media screen and (min-width: 768px) {
-//     margin-left: 30px;
-//   }
-// }
+.nice-select {
+  // -webkit-tap-highlight-color: none;
+  // background: rgba(255, 255, 255, 0.2);
+  // backdrop-filter: blur(10px);
 
-// ===== Стили для оформления секции form-field-country =====
-
-.app {
-  ::-webkit-scrollbar {
+  & .list::-webkit-scrollbar {
     width: 3px;
   }
 
   ::-webkit-scrollbar-button {
-    height: 15px;
+    height: 5px;
   }
 
   ::-webkit-scrollbar-thumb {
@@ -300,146 +280,113 @@
     height: 43px;
   }
 
-  // padding-top: 5rem;
-  // display: flex;
-  // justify-content: center;
-
-  // @media screen and (min-width: 768px) {
-  //   margin-left: 30px;
-  // }
-}
-
-.wrap {
-  width: 270px;
-  height: 40px;
-}
-
-.select {
-  width: 100%;
-  position: relative;
-  z-index: 5;
+  & .current {
+    display: inline-block;
+    line-height: 40px;
+    max-width: 190px;
+    // white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+  }
 
   &.open {
-    .select__dropdown {
-      display: block;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  & .nice-select-dropdown {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: none;
+    width: 270px;
+    margin-top: 0;
+    // max-height: 170px;
+    height: 170px;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: #cccccc;
+    box-shadow: none;
+
+    & li {
+      height: 24px;
+      padding-left: 30px;
+      padding-right: 10px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      line-height: 24px;
+      // margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    .select__input {
-      // border-bottom: 1px solid #939393;
-      position: relative;
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
+    & .list {
+      max-height: 170px;
 
-      &::after {
-        height: 1px;
-        width: 225px;
-        background-color: #939393;
-        position: absolute;
-        left: 23px;
-        bottom: 0px;
-        z-index: 1;
-        content: '';
+      & .option {
+        // background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      &:hover {
+        // background-color: rgba(255, 255, 255, 0.1);
       }
     }
 
-    .select__backdrop {
-      display: block;
+    & .list .selected {
+      color: white;
+      font-weight: 500;
+    }
+
+    & .option {
+      &:hover,
+      &.focus,
+      &.selected.focus {
+        background-color: #dc56c5;
+      }
+    }
+
+    &::before {
+      height: 1px;
+      width: 225px;
+      background-color: #939393;
+      position: absolute;
+      left: 23px;
+      top: 0px;
+      z-index: 1;
+      content: '';
     }
   }
 
-  &__input {
-    // display: block;
-    border: none;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    color: #939393;
-    height: 40px;
-    margin-bottom: 25px;
-    padding-left: 30px;
-    padding-right: 30px;
-    // white-space: nowrap;
-    // overflow-x: hidden;
-    font-family: 'Montserrat';
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 400;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    // padding: 0 1rem;
-    cursor: pointer;
-
-    & span {
-      max-width: 190px;
-      white-space: nowrap;
-      overflow-x: hidden;
-      text-overflow: ellipsis;
-    }
+  & .nice-select-search-box {
+    height: 24px;
+    padding: 1px;
   }
 
-  &__dropdown {
-    display: none;
-    position: absolute;
-    border: none;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+  & .nice-select-search {
+    display: inline-block;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    color: #939393;
+    border: none;
+    border-radius: 0;
+    color: white;
     font-family: 'Montserrat';
     font-size: 16px;
     line-height: 20px;
     font-weight: 400;
     text-align: left;
-    top: 40px;
-    left: 0;
-    right: 0;
-    max-height: 170px;
-    overflow-y: auto;
-    // box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+    min-height: 24px;
+    padding: 0 30px;
+    width: 270px;
+    margin-right: 0px;
   }
 
-  &__list {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-
-  &__backdrop {
-    position: fixed;
-    display: none;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: transparent;
-  }
-
-  &__item {
-    display: block;
-    width: 265px;
-    padding-left: 30px;
-    padding-right: 20px;
-    height: 25px;
-    line-height: 25px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    color: #cccccc;
-
-    &.selected {
-      font-weight: 700;
-    }
-
-    &:hover {
-      background-color: #dc56c5;
-      color: white;
-      cursor: pointer;
-      transition: 0.15s background-color ease-in;
-    }
+  &::after {
+    right: 30px;
+    height: 8px;
+    width: 8px;
   }
 }
-
-// ===== Стили для оформления секции form-field-country =====
+// ===== Стили для оформления секции nice-select =====
