@@ -10,7 +10,7 @@ mainUl.addEventListener('click', onClickPage);
 
 function onClickPage(event) {
   event.preventDefault();
-  console.log(event.target.tagName);
+  // console.log(event.target.tagName);
   if (event.target.tagName !== 'A') {
     return false;
   } else {

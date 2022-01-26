@@ -16,14 +16,14 @@ async function fetchUrl(keyword, code) {
     );
     const data = await response.json();
     renderCard(data._embedded.events);
-    console.log(
-      'Pages for renderPage: ',
-      Math.min(47, +data.page.totalPages),
-      ' of ',
-      data.page.totalPages,
-    );
+    // console.log(
+    //   'Pages for renderPage: ',
+    //   Math.min(47, +data.page.totalPages),
+    //   ' of ',
+    //   data.page.totalPages,
+    // );
     renderPage(Math.min(47, +data.page.totalPages), data._links.self.href);
-    console.log(data);
+    // console.log(data);
     if (data.page.totalElements !== 0) {
       setTimeout(() => {
         Notiflix.Notify.success('Awesome! GO-GO-GO');

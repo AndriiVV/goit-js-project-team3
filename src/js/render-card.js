@@ -41,30 +41,31 @@ function renderCard(info) {
       .join('');
 
     cardEL.innerHTML = cardMarkup;
-    const spanText = document.querySelectorAll(".card-text__name")
-    const spanAll = [...spanText]
-    const placeText = document.querySelectorAll(".card-text__place")
-    const placeAll = [...placeText]
-// console.log(placeAll);
 
-    const spanMap = spanAll.map(item => { 
+    const spanText = document.querySelectorAll(".card-text__name")
+    removeAnimationSpanText([...spanText])
+
+    const placeText = document.querySelectorAll(".card-text__place")
+    removeAnimationPlaceText([...placeText])
+  }
+}
+function removeAnimationSpanText(nameItems) {
+  
+  const spanMap = nameItems.map(item => { 
       if (item.textContent.length < 20) {
        return item.classList.remove("animation__scss")
       }
     })
+}
 
-    const placeMap = placeAll.map(item => { 
-      console.log(item.textContent.length);
+function removeAnimationPlaceText(placeItems) {
+   const placeMap = placeAll.map(item => { 
       if (item.textContent.length < 75) {
        return item.classList.remove("animation__scss")
       }
     })
-    
-  }
 }
 
 export default renderCard;
 
-// <svg width="7" height="10" viewBox="0 0 7 10" class="place-icon">
-//   <use href="${vectorSvg}"></use>
-// </svg>;
+
