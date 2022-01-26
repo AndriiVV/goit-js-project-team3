@@ -14,6 +14,16 @@ function onClickPage(event) {
   if (event.target.tagName !== 'A') {
     return false;
   } else {
+    // Check if clicked page is not Active to prevent the same content refresh:
+
+    const exActivePage = document.querySelector(
+      '.main__pagination a.js__pagination_active',
+    ).textContent;
+    // console.log('exActivePage is: ', exActivePage);
+    // console.log('newActivePage is: ', event.target.textContent);
+
+    if (event.target.textContent == exActivePage) return;
+
     const finalHref = event.target.dataset.href;
     numberPage = `&page=${+event.target.textContent - 1}&apikey=841T1YMOPnVKBAAycVhND0Lj4GpnyoMw`;
     if (event.target.textContent > 1) {
