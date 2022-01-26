@@ -1,5 +1,6 @@
 import renderCard from './render-card';
 import renderPage from './render-page';
+import Notiflix from 'notiflix';
 async function fetchByAuthor(nameEvent) {
   try {
     const responce = await fetch(
@@ -9,7 +10,9 @@ async function fetchByAuthor(nameEvent) {
     // console.log(infoAuthor);
     renderCard(infoAuthor._embedded.events);
     renderPage(Math.min(47, infoAuthor.page.totalPages), infoAuthor._links.self.href);
+    Notiflix.Notify.success(' 👏 More EVENTS for this AUTHOR!'  )
   } catch (error) {
+    Notiflix.Notify.failure('Sorry, NOT Today ....  🥺' );
     error.message;
   }
 }

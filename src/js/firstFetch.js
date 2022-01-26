@@ -29,7 +29,7 @@ function renderCardForTablet(info, name) {
   // console.log('renderCardForTablet is running... Next is renderPage');
   renderPage(Math.min(47, info.page.totalPages), info._links.self.href);
   setTimeout(() => {
-    Notiflix.Notify.success(`HELLO, You see EVENTS only ${name}`);
+    Notiflix.Notify.success(`HELLO 👋, You see EVENTS only ${name}`);
   }, 300);
   setTimeout(() => {
     Notiflix.Notify.info('👈 BUT, You Can write or Say KEYWORD, and see events only you want');
