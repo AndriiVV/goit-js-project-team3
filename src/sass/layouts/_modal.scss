@@ -34,8 +34,8 @@
     border-bottom-right-radius: 300px;
   }
   @media screen and (min-width: 1280px) {
-    width: 930px;
-    height: 1023px;
+    width: 830px;
+    height: 825px;
     padding: 30px 30px 62px;
     border-top-left-radius: 300px;
     border-bottom-right-radius: 300px;
@@ -77,9 +77,10 @@
       height: 416px;
     }
     @media screen and (min-width: 1280px) {
+      margin-top: 25px;
       display: flex;
-      width: 360px;
-      height: 641px;
+      width: 277px;
+      height: 400px;
     }
   }
 
@@ -138,8 +139,10 @@
     }
     @media screen and (min-width: 1280px) {
       margin-bottom: 41px;
-      width: 132px;
-      height: 132px;
+      // width: 132px;
+      // height: 132px;
+      width: 125px;
+      height: 125px;
     }
     img {
       display: block;
@@ -183,8 +186,10 @@
       @media screen and (min-width: 1280px) {
         text-align: left;
         margin-bottom: 7px;
-        font-size: 24px;
-        margin-top: 20px;
+        // font-size: 24px;
+        font-size: 17px;
+        margin-top: 10px;
+        // margin-top: 20px;
       }
     }
 
@@ -203,7 +208,8 @@
       }
       @media screen and (min-width: 1280px) {
         text-align: left;
-        font-size: 18px;
+        // font-size: 18px;
+        font-size: 15px;
       }
       // @media screen and (min-width: 768px) and (max-width: 1279px) {
       // }
@@ -225,7 +231,8 @@
       @media screen and (min-width: 768px) and (max-width: 1279px) {
       }
       @media screen and (min-width: 1280px) {
-        margin-bottom: 31px;
+        // margin-bottom: 31px;
+        margin-bottom: 15px;
       }
     }
   }
@@ -320,6 +327,7 @@
 
 // ========= SCROLL INFO ==========
 #element {
+  overflow: hidden;
   overflow-y: scroll;
   margin-bottom: 10px;
   width: 243px;
@@ -329,8 +337,8 @@
     height: 100px;
   }
   @media screen and (min-width: 1280px) {
-    width: 450px;
-    height: 66px;
+    width: 425px;
+    height: 55px;
   }
 }
 #element::-webkit-scrollbar {
