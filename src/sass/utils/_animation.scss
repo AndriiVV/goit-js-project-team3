@@ -3,65 +3,65 @@
 //     animation-duration: 1s;
 // }
 .logo {
-    animation: fadeInTopLeft;
-    animation-duration: 4s;
+  animation: fadeInTopLeft;
+  animation-duration: 2s;
 }
 
 .logo-list {
+  animation: pulse;
+  animation-duration: 8s;
+  :hover {
     animation: pulse;
-    animation-duration: 8s;
-     :hover {
-        animation: pulse;
-        animation-duration: 1s;
-    }
+    animation-duration: 1s;
+  }
 }
 
 .form-field-search {
-    animation: pulse;
-    animation-duration: 6s;
+  animation: pulse;
+  animation-duration: 6s;
 }
 
 .form-field-country {
-    animation: pulse;
-    animation-duration: 1s;
+  animation: pulse;
+  animation-duration: 1s;
 }
 
 .search__list {
-    // display: inline-block;
-    animation: pulse;
-    animation-duration: 1.5s;
+  // display: inline-block;
+  animation: pulse;
+  animation-duration: 1.5s;
 }
 
 .search__img {
-    // display: inline-block;
+  // display: inline-block;
+  animation: pulse;
+  animation-duration: 1s;
+  :hover {
     animation: pulse;
     animation-duration: 1s;
-     :hover {
-        animation: pulse;
-        animation-duration: 1s;
-    }
+  }
 }
 
 .search__rectangle {
-    animation: rotateIn;
-    animation-duration: 1.5s;
+  animation: rotateIn;
+  animation-duration: 1.5s;
 }
 
 .main__pagination_item {
-     :hover {
-        animation: tada;
-        animation-duration: 2s;
-    }
+  :hover {
+    animation: tada;
+    animation-duration: 2s;
+  }
 }
 
 .about-card__team li {
-     :hover {
-        animation: pulse;
-        animation-duration: 2s;
-    }
+  //  :hover {
+  //     animation: pulse;
+  //     animation-duration: 2s;
+  // }
 }
 
 .header__overlay_bottom {
-    animation: fadeIn;
-    animation-duration: 2s;
+  animation: fadeIn;
+  animation-duration: 2s;
 }
