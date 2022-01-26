@@ -60,6 +60,10 @@
   &__img-box-big {
     display: none;
     overflow: hidden;
+    box-shadow: 4px 0px 8px 8px rgba(34, 60, 80, 0.3);
+
+    border-radius: 10px 10px 10px 10px;
+
     img {
       display: block;
       object-fit: cover;
@@ -211,7 +215,7 @@
       text-align: center;
       padding-top: 10px;
       margin-bottom: 20px;
-      width: 145px;
+
       height: 40px;
       border-radius: 5px;
       font-weight: 500;
@@ -226,10 +230,52 @@
   }
 
   &__btn-buy {
+    position: relative;
     margin-top: 10px;
     color: var(--primary-text-color);
     background-color: var(--secondary-accent-color);
-
+    border-radius: 5px;
+    -webkit-transition: all ease;
+    -moz-transition: all ease;
+    -o-transition: all ease;
+    transition: all ease;
+    padding: 10px 35px;
+    overflow: hidden;
+    &:hover {
+      border: 2px solid #dc56c5;
+      color: #dc56c5;
+      background-color: whitesmoke;
+      cursor: pointer;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+    }
+    &:before {
+      font-family: FontAwesome;
+      content: '\f07a';
+      position: absolute;
+      top: 11px;
+      left: -30px;
+      transition: all 200ms ease;
+    }
+    &:hover:before {
+      left: 7px;
+    }
+    // &:before {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 0;
+    //   height: 42px;
+    //   background: rgba(255, 255, 255, 0.3);
+    //   border-radius: 5px;
+    //   transition: all 2s ease;
+    // }
+    // &:hover:before {
+    //   width: 100%;
+    // }
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       margin-bottom: 20px;
     }
@@ -239,6 +285,7 @@
     }
   }
   &__btn-more {
+    padding-top: 9px;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
@@ -248,6 +295,19 @@
     background-color: transparent;
     border: 1px solid var(--secondary-accent-color);
     border-radius: 5px;
+    -webkit-transition: all ease;
+    -moz-transition: all ease;
+    -o-transition: all ease;
+    transition: all ease;
+    &:hover {
+      color: white;
+      background-color: var(--secondary-accent-color);
+      cursor: pointer;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+    }
 
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       margin-top: 13px;
