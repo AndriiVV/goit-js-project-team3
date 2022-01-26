@@ -1,6 +1,7 @@
 import fetchByCountry from "./fetchCountry"
 
-const countryName = document.querySelector(".search-form");
+const countryName = document.querySelector(".nice-select")
+
 
 countryName.addEventListener("click", onClickCountryName)
 
@@ -11,6 +12,7 @@ function onClickCountryName(event) {
     return false
   }
   else {
+    console.log(event.target.dataset.value);
     fetchByCountry(event.target.dataset.value)
   }
 }
