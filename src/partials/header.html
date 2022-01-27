@@ -7,57 +7,57 @@
             <use href="./images/symbol-defs.svg#icon-e-logo"></use>
           </svg>
         </li>
-        <li class="logo-item event-item">
+        <li class="logo-item event-item animate__animated animate__backInDown animate__delay-2s">
           <svg class="logo-icon">
             <use href="./images/symbol-defs.svg#icon-v-event"></use>
           </svg>
         </li>
-        <li class="logo-item event-item">
+        <li class="logo-item event-item animate__animated animate__backInDown animate__delay-3s">
           <svg class="logo-icon">
             <use href="./images/symbol-defs.svg#icon-e-logo"></use>
           </svg>
         </li>
-        <li class="logo-item event-item">
+        <li class="logo-item event-item animate__animated animate__fadeInBottomRight animate__delay-4s">
           <svg class="logo-icon">
             <use href="./images/symbol-defs.svg#icon-n-event"></use>
           </svg>
         </li>
-        <li class="logo-item event-item">
+        <li class="logo-item event-item animate__animated animate__fadeInBottomRight animate__delay-2s">
           <svg class="logo-icon">
             <use href="./images/symbol-defs.svg#icon-t-buster"></use>
           </svg>
         </li>
-        <li class="logo-item">
+        <li class="logo-item ">
           <svg class="logo-icon">
             <use href="./images/symbol-defs.svg#icon-b-buster"></use>
           </svg>
         </li>
-        <li class="logo-item">
+        <li class="logo-item animate__animated animate__backInUp animate__slower 1s">
           <svg class="logo-icon logo-icon__u1" width="10" height="21">
             <use href="./images/symbol-defs.svg#icon-u1-buster"></use>
           </svg>
         </li>
-        <li class="logo-item">
+        <li class="logo-item animate__animated animate__backInDown animate__slower 2s">
           <svg class="logo-icon logo-icon__u2" width="10" height="21">
             <use href="./images/symbol-defs.svg#icon-u2-buster"></use>
           </svg>
         </li>
-        <li class="logo-item">
+        <li class="logo-item animate__animated animate__backInDown animate__slower 3s">
           <svg class="logo-icon">
             <use href="./images/symbol-defs.svg#icon-s-buster"></use>
           </svg>
         </li>
-        <li class="logo-item buster-item">
+        <li class="logo-item buster-item animate__animated animate__fadeInBottomRight animate__delay-2s">
           <svg class="logo-icon">
             <use href="./images/symbol-defs.svg#icon-t-buster"></use>
           </svg>
         </li>
-        <li class="logo-item buster-item">
+        <li class="logo-item buster-item animate__animated animate__backInDown animate__delay-3s">
           <svg class="logo-icon">
             <use href="./images/symbol-defs.svg#icon-e-logo"></use>
           </svg>
         </li>
-        <li class="logo-item buster-item">
+        <li class="logo-item buster-item animate__animated animate__backInUp animate__slower 3s ">
           <svg class="logo-icon">
             <use href="./images/symbol-defs.svg#icon-r-buster"></use>
           </svg>
@@ -69,7 +69,7 @@
   <div class="header__overlay"></div>
   <div class="header__overlay_bottom"></div>
   <div class="title-container">
-    <h2 class="title">
+    <h2 class="title animate__animated animate__backInDown animate__slower	2s ">
       FIND BEST EVENTS <br />
       AROUND THE WORLD
     </h2>
@@ -93,10 +93,27 @@
         </svg>
       </div>
 
-      <div id="a-select" class="form-field-country country-input">
-        <select name="searchCountryQueryNew" id=""></select>
+      <div id="a-select" class="form-field-country country-input" hidden>
+        <select class="search-country" name="searchCountryQueryNew" id=""></select>
       </div>
       <button class="btn-hidden">Search</button>
     </form>
+  </div>
+
+  <div id="container__spinner">
+    <svg id="svg-spinner" xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 48 48">
+      <circle cx="24" cy="4" r="4" fill="#fff" />
+      <circle cx="12.19" cy="7.86" r="3.7" fill="#fffbf2" />
+      <circle cx="5.02" cy="17.68" r="3.4" fill="#fef7e4" />
+      <circle cx="5.02" cy="30.32" r="3.1" fill="#fef3d7" />
+      <circle cx="12.19" cy="40.14" r="2.8" fill="#feefc9" />
+      <circle cx="24" cy="44" r="2.5" fill="#feebbc" />
+      <circle cx="35.81" cy="40.14" r="2.2" fill="#fde7af" />
+      <circle cx="42.98" cy="30.32" r="1.9" fill="#fde3a1" />
+      <circle cx="42.98" cy="17.68" r="1.6" fill="#fddf94" />
+      <circle cx="35.81" cy="7.86" r="1.3" fill="#fcdb86" />
+    </svg>
+   
+  </div>
   </div>
 </header>

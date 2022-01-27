@@ -8,6 +8,7 @@ let page = 1;
 
 const cardEl = document.querySelector('.search__list');
 const mainPagin = document.querySelector('.main__pagination');
+const searchEl = document.querySelector('.search-input');
 
 async function fetchUrl(keyword, code) {
   // console.log('fetchUrl is running (before try)...');
@@ -20,29 +21,31 @@ async function fetchUrl(keyword, code) {
 
     // console.log(
     //   'Pages for renderPage: ',
-    //   Math.min(47, +data.page.totalPages),
+    //   Math.min(50, +data.page.totalPages),
     //   ' of ',
     //   data.page.totalPages,
     // );
     // console.log('fetchUrl is running (in try)... Next is renderPage');
 
-    renderPage(Math.min(47, +data.page.totalPages), data._links.self.href);
+    renderPage(Math.min(50, +data.page.totalPages), data._links.self.href);
     // console.log(data);
     if (data.page.totalElements !== 0) {
+     
+      searchEl.value = ""
       setTimeout(() => {
-        Notiflix.Notify.success('Awesome! GO-GO-GO');
+        Notiflix.Notify.success('Awesome! 🤟 GO-GO-GO');
       }, 500);
     } else if (data.page.totalElements === 0) {
-      cardEl.innerHTML = ``;
-      mainPagin.innerHTML = ``;
+      // cardEl.innerHTML = ``;
+      // mainPagin.innerHTML = ``;
       setTimeout(() => {
-        Notiflix.Notify.failure('Sorry, NOT Today ....');
+        Notiflix.Notify.failure('Sorry, NOT Today ....  🥺');
       }, 500);
     }
   } catch (error) {
-    cardEl.innerHTML = ``;
-    mainPagin.innerHTML = ``;
-    Notiflix.Notify.failure('Sorry, NOT Today ....');
+    // cardEl.innerHTML = ``;
+    // mainPagin.innerHTML = ``;
+    Notiflix.Notify.failure('Sorry, NOT Today .... 🥺');
     error.message;
   }
 }
