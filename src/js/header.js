@@ -63,6 +63,7 @@ refs.form.addEventListener('submit', onSubmitForm);
 function onSubmitForm(event) {
   event.preventDefault();
   searchId = event.target.q.value;
+
   // console.log('onSubmitForm is running... searchId is: ', searchId);
 
   code = document.querySelector('div.nice-select.form-field-country li.selected').dataset.value;
@@ -70,8 +71,9 @@ function onSubmitForm(event) {
   // console.log('Before fetchUrl running (from onSubmitForm)... Parameters are: ', searchId, code);
 
   fetchUrl(searchId, code);
-
-  event.target.reset();
+ 
+  
+  // event.target.reset();
 }
 
 export default onSubmitForm;

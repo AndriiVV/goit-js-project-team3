@@ -75,6 +75,7 @@
   @media screen and (min-width: 1280px) {
     top: 344px;
     background: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%);
+    color: rgb(20, 15, 15);
   }
 }
 
@@ -109,6 +110,7 @@
   padding-left: 25px;
   width: 75px;
   height: 44px;
+
   @media screen and (min-width: 768px) {
     width: 125px;
     height: 81px;
@@ -431,4 +433,92 @@
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
+}
+//==================Spiner========================
+
+#html-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #dc56c5;
+  border-top: 4px solid white;
+  border-radius: 50%;
+}
+
+#html-spinner,
+#svg-spinner {
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 1.5s;
+  -webkit-animation-name: rotate;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+
+  -moz-transition-property: -moz-transform;
+  -moz-animation-name: rotate;
+  -moz-animation-duration: 1.5s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+
+  transition-property: transform;
+  animation-name: rotate;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes rotate {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Rest of page style*/
+
+#container__spinner {
+  width: 90%;
+  max-width: 700px;
+  margin: 1em auto;
+  position: relative;
+}
+
+/* spinner positioning */
+
+#svg-spinner {
+  position: absolute;
+  top: 40px;
+  left: 46%;
+  @media screen and (max-width: 767px) {
+    position: absolute;
+    top: -13px;
+    left: 41%;
+  }
+}
+
+#svg-para {
+  position: absolute;
+
+  top: 100px;
+  width: 40%;
+  padding: 5%;
+  text-align: center;
 }

@@ -36,10 +36,10 @@ function renderCardForTablet(info, name) {
   renderPage(Math.min(50, info.page.totalPages), info._links.self.href);
   setTimeout(() => {
     Notiflix.Notify.success(`HELLO 👋, You see EVENTS only ${name}`);
-  }, 300);
+  }, 1800);
   setTimeout(() => {
     Notiflix.Notify.info('👈 BUT, You Can write or Say KEYWORD, and see events only you want');
-  }, 4000);
+  }, 5000);
 }
 
 export default startPage;
