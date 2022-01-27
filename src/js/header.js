@@ -57,12 +57,14 @@ refs.form.addEventListener('submit', onSubmitForm);
 function onSubmitForm(event) {
   event.preventDefault();
   searchId = event.target.q.value;
-  // console.log(searchId);
+
 
   code = document.querySelector('div.nice-select.form-field-country li.selected').dataset.value;
+  
   fetchUrl(searchId, code);
-
-  event.target.reset();
+ 
+  
+  // event.target.reset();
 }
 
 export default onSubmitForm;
