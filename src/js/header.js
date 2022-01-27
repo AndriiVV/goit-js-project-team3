@@ -34,6 +34,12 @@ const refs = {
   cardEL: document.querySelector('.search__list'),
 };
 
+// console.log(
+//   'Before startPage running (from hader.js)... Parameters are: ',
+//   refs.inputCountry.dataset.value,
+//   refs.inputCountry.textContent,
+// );
+
 startPage(refs.inputCountry.dataset.value, refs.inputCountry.textContent);
 
 let code = '';
@@ -58,9 +64,12 @@ function onSubmitForm(event) {
   event.preventDefault();
   searchId = event.target.q.value;
 
+  // console.log('onSubmitForm is running... searchId is: ', searchId);
 
   code = document.querySelector('div.nice-select.form-field-country li.selected').dataset.value;
-  
+
+  // console.log('Before fetchUrl running (from onSubmitForm)... Parameters are: ', searchId, code);
+
   fetchUrl(searchId, code);
  
   

@@ -279,6 +279,10 @@
 
 // ===== Стили для оформления секции nice-select =====
 
+.a-select {
+  display: none;
+}
+
 .nice-select {
   & .list::-webkit-scrollbar {
     width: 3px;
