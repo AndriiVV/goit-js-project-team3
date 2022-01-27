@@ -9,10 +9,14 @@ async function fetchByAuthor(nameEvent) {
     const infoAuthor = await responce.json();
     // console.log(infoAuthor);
     renderCard(infoAuthor._embedded.events);
-    renderPage(Math.min(47, infoAuthor.page.totalPages), infoAuthor._links.self.href);
-    Notiflix.Notify.success(' 👏 More EVENTS for this AUTHOR!'  )
+    renderPage(Math.min(50, infoAuthor.page.totalPages), infoAuthor._links.self.href);
+    setTimeout(() => {
+      Notiflix.Notify.success(' 👏 More EVENTS for this AUTHOR!');
+    }, 300);
   } catch (error) {
-    Notiflix.Notify.failure('Sorry, NOT Today ....  🥺' );
+    setTimeout(() => {
+      Notiflix.Notify.failure('Sorry, NOT Today ....  🥺');
+    }, 300);
     error.message;
   }
 }

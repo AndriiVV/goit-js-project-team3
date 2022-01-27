@@ -26,7 +26,13 @@ async function startPage(idCountry, countryName) {
 function renderCardForTablet(info, name) {
   // console.log('renderCardForTablet is running... Next is renderCard');
   renderCard(info._embedded.events);
-  // console.log('renderCardForTablet is running... Next is renderPage');
+
+  // console.log(
+  //   'renderCardForTablet is running... Next is renderPage. Parameters are: ',
+  //   Math.min(50, info.page.totalPages),
+  //   info._links.self.href,
+  // );
+
   renderPage(Math.min(50, info.page.totalPages), info._links.self.href);
   setTimeout(() => {
     Notiflix.Notify.success(`HELLO 👋, You see EVENTS only ${name}`);
